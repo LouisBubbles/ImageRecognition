@@ -1,0 +1,12 @@
+{
+    "name": "ImageRecognition",
+    "description": "PC version of camera image loading and processing using image recognition",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
