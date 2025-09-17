@@ -156,6 +156,137 @@
         "className": ""
     },
     {
+        "id": "a03dd74e1e2b7cfb",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d7901f40.2659d",
+        "type": "ui_tab",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "89749fb7.87f01",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "d7901f40.2659d",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "ab397e95.29ebe",
+        "type": "ui_group",
+        "name": "Inputs",
+        "tab": "d7901f40.2659d",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "4e7edda4.417004",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "d7901f40.2659d",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
         "id": "8c6363d1f4173d5b",
         "type": "ftp in",
         "z": "b0f4f7473d33c794",
@@ -1384,8 +1515,8 @@
         "masks": "*.*",
         "masksregex": false,
         "name": "",
-        "x": 970,
-        "y": 60,
+        "x": 1150,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1409,10 +1540,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "path",
-        "payload": "C:\\Users\\LouisLeDucTheGreatBu\\TGBB Dropbox\\TGBB RnD\\MM-Monitor and Measure\\MM002 Catchment Monitoring\\Image recognition\\Training images\\KAT_model v3\\",
+        "payload": "C:\\Users\\LouisLeDucTheGreatBu\\TGBB Dropbox\\TGBB RnD\\MM-Monitor and Measure\\MM002 Catchment Monitoring\\Image recognition\\Training images\\Harlingen V2\\",
         "payloadType": "str",
-        "x": 630,
-        "y": 60,
+        "x": 810,
+        "y": 240,
         "wires": [
             [
                 "4b7439c7cd25c7f9",
@@ -1439,8 +1570,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 60,
+        "x": 970,
+        "y": 240,
         "wires": [
             [
                 "a384cfa3d0690f7d"
@@ -1827,8 +1958,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 100,
+        "x": 950,
+        "y": 280,
         "wires": [
             []
         ]
@@ -1953,17 +2084,19 @@
         "type": "function",
         "z": "a1d770f327e26cc6",
         "name": "stats",
-        "func": "var fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\n\nswitch(newClass) {\n  case \"Full\":\n    fullAmount ++;\n    break;\n  case \"Half\":\n    halfAmount++;\n    break;\n  case \"Empty\":\n    emptyAmount ++;\n    break;\n}\n\nreturn msg;",
+        "func": "var fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\nvar newClass = flow.get('newClass');\nswitch(newClass) {\n  case \"Full\":\n    fullAmount ++;\n    break;\n  case \"Half\":\n    halfAmount++;\n    break;\n  case \"Empty\":\n    emptyAmount ++;\n    break;\n}\n\ncontext.set('fullAmount', fullAmount);\ncontext.set('halfAmount', halfAmount);\ncontext.set('emptyAmount', emptyAmount);\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\"];\nm.data = [[fullAmount, halfAmount, emptyAmount]];\nm.series = [\"classes\"];\nreturn {payload:[m],topic:msg.topic};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
+        "x": 330,
         "y": 580,
         "wires": [
-            []
+            [
+                "2fe969c7b9526d86"
+            ]
         ]
     },
     {
@@ -2007,6 +2140,50 @@
         "x": 710,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "2fe969c7b9526d86",
+        "type": "ui_chart",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "bc6726098f838573",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 470,
+        "y": 580,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "bb7d4b0.4eee0b8",
