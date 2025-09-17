@@ -1,1 +1,4173 @@
-[]
+[
+    {
+        "id": "b0f4f7473d33c794",
+        "type": "tab",
+        "label": "Image model trainer",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a1d770f327e26cc6",
+        "type": "tab",
+        "label": "Model improver",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "74e145a951bbb86a",
+        "type": "tab",
+        "label": "Image Test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f86ca03fad76d4ee",
+        "type": "ui_tab",
+        "name": "Graphs",
+        "icon": "fa-line-chart",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "98b4b7a5fcee52fa",
+        "type": "ui_tab",
+        "name": "Image test",
+        "icon": "dashboard",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b4256d5424c9038d",
+        "type": "ui_tab",
+        "name": "Catch Cam Setup",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6c4f01e555a0a282",
+        "type": "ui_group",
+        "name": "graphs",
+        "tab": "f86ca03fad76d4ee",
+        "order": 1,
+        "disp": false,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8924e22f.e375e",
+        "type": "ui_group",
+        "name": "img",
+        "tab": "98b4b7a5fcee52fa",
+        "order": 1,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4aa367c113b70963",
+        "type": "ui_group",
+        "name": "Test",
+        "tab": "b4256d5424c9038d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6b3ffe54bcf95fda",
+        "type": "ui_group",
+        "name": "Add location",
+        "tab": "b4256d5424c9038d",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f69079dc874018d4",
+        "type": "ftp",
+        "host": "ftp.tgbb.nl",
+        "port": "21",
+        "secureOptions": "",
+        "user": "tgbb_test",
+        "connTimeout": "",
+        "pasvTimeout": "",
+        "keepalive": ""
+    },
+    {
+        "id": "eaf2c287864f6252",
+        "type": "ui_tab",
+        "name": "Model Improver",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d2cfead90bb477f0",
+        "type": "ui_group",
+        "name": "FTP files",
+        "tab": "eaf2c287864f6252",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "11cd9356041089b5",
+        "type": "ui_tab",
+        "name": "Catch Cam",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "117855cb9e91df90",
+        "type": "ui_group",
+        "name": "Location 1",
+        "tab": "11cd9356041089b5",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc6726098f838573",
+        "type": "ui_group",
+        "name": "Local Files",
+        "tab": "eaf2c287864f6252",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8c6363d1f4173d5b",
+        "type": "ftp in",
+        "z": "b0f4f7473d33c794",
+        "ftp": "f69079dc874018d4",
+        "operation": "get",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 670,
+        "y": 380,
+        "wires": [
+            [
+                "02452a1412d10e81"
+            ]
+        ]
+    },
+    {
+        "id": "5b6d488d3d2b7bbf",
+        "type": "ftp in",
+        "z": "b0f4f7473d33c794",
+        "ftp": "f69079dc874018d4",
+        "operation": "list",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "c8afc5e595dcead2"
+            ]
+        ]
+    },
+    {
+        "id": "5a7d9589ee232738",
+        "type": "inject",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP folder",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "filename",
+                "v": "/CAM_HAR/",
+                "vt": "str"
+            },
+            {
+                "p": "x",
+                "v": "180",
+                "vt": "num"
+            },
+            {
+                "p": "y",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "p": "size",
+                "v": "720",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "11b451e23de51f7b"
+            ]
+        ]
+    },
+    {
+        "id": "c8afc5e595dcead2",
+        "type": "split",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "64b5e8f52a3efe4b"
+            ]
+        ]
+    },
+    {
+        "id": "64b5e8f52a3efe4b",
+        "type": "switch",
+        "z": "b0f4f7473d33c794",
+        "name": "not folders",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "d",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "f194ca1d32206979"
+            ]
+        ]
+    },
+    {
+        "id": "b7e6f95d582453b1",
+        "type": "delay",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "74e314a3b97d6844"
+            ]
+        ]
+    },
+    {
+        "id": "74e314a3b97d6844",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "folder sorting",
+        "func": "msg.localFolder = \"C:/Users/LouisLeDucTheGreatBu/TGBB Dropbox/TGBB R&D +/MM-Monitor and Measure/MM001 System Monitoring/camera/Training images\"\n+ msg.folder;\nmsg.localFilename = msg.localFolder + msg.payload.name;\n\nmsg.filename = msg.filename + msg.payload.name;\nmsg.originalFilename = msg.payload.name;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 380,
+        "wires": [
+            [
+                "8c6363d1f4173d5b",
+                "cd5b8225d7fae17e"
+            ]
+        ]
+    },
+    {
+        "id": "9da9d21f73de7d39",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "change location and crop in inject node square is best for training image recognition",
+        "info": "",
+        "x": 330,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "58ec98a2ae682352",
+        "type": "file in",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "filename": "localFilename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "base64",
+        "allProps": false,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "fc4512d8cf82c162"
+            ]
+        ]
+    },
+    {
+        "id": "11b451e23de51f7b",
+        "type": "change",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "folder",
+                "pt": "msg",
+                "to": "filename",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "5b6d488d3d2b7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "58018b3201bc55e2",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "filename",
+        "func": "msg.newFilename = \n\"C:/Users/LouisLeDucTheGreatBu/TGBB Dropbox/TGBB R&D +/MM-Monitor and Measure/MM001 System Monitoring/camera/Training images\" \n+ msg.folder  + \"crop/\" + \nmsg.originalFilename;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "617d72212e832221"
+            ]
+        ]
+    },
+    {
+        "id": "617d72212e832221",
+        "type": "jimp-image",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "newFilename",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 1,
+        "jimpFunction": "write",
+        "selectedJimpFunction": {
+            "name": "write",
+            "fn": "write",
+            "description": "Write to file. NOTE: You can specify an alternative file extension type to change the type. Currently support types are jpg, png, bmp.",
+            "parameters": [
+                {
+                    "name": "filename",
+                    "type": "str",
+                    "required": true,
+                    "hint": "Name of the file",
+                    "defaultType": "str"
+                }
+            ]
+        },
+        "x": 830,
+        "y": 480,
+        "wires": [
+            [
+                "205c1a82155c7dad"
+            ]
+        ]
+    },
+    {
+        "id": "205c1a82155c7dad",
+        "type": "image viewer",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 1030,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc4512d8cf82c162",
+        "type": "jimp-image",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "x",
+        "parameter1Type": "msg",
+        "parameter2": "y",
+        "parameter2Type": "msg",
+        "parameter3": "size",
+        "parameter3Type": "msg",
+        "parameter4": "size",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "58018b3201bc55e2"
+            ]
+        ]
+    },
+    {
+        "id": "e1d88b580a7c31ed",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP Scraper",
+        "info": "",
+        "x": 110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8175a11a46336de9",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "per file",
+        "info": "",
+        "x": 150,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "99cd8dceceae9a67",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "crop and save",
+        "info": "",
+        "x": 170,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "cd5b8225d7fae17e",
+        "type": "delay",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "0a3b6d3b5e2c013e"
+            ]
+        ]
+    },
+    {
+        "id": "a94544ba7e878124",
+        "type": "file",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "filename": "localFolder",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1220,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0a3b6d3b5e2c013e",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "create folder",
+        "func": "msg.localFolder = msg.localFolder + \"a.txt\"\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 340,
+        "wires": [
+            [
+                "a94544ba7e878124"
+            ]
+        ]
+    },
+    {
+        "id": "02452a1412d10e81",
+        "type": "delay",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 380,
+        "wires": [
+            [
+                "58ec98a2ae682352"
+            ]
+        ]
+    },
+    {
+        "id": "374e8016d614f30d",
+        "type": "debug",
+        "z": "b0f4f7473d33c794",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b476622a669360a8",
+        "type": "switch",
+        "z": "b0f4f7473d33c794",
+        "name": "time 12 filter",
+        "property": "time",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "11999999",
+                "vt": "num",
+                "v2": "13000000",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 910,
+        "y": 240,
+        "wires": [
+            [
+                "374e8016d614f30d",
+                "b7e6f95d582453b1"
+            ]
+        ]
+    },
+    {
+        "id": "1c73e82dce42a43c",
+        "type": "inject",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP folder HAR",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "filename",
+                "v": "/CAM_HAR/",
+                "vt": "str"
+            },
+            {
+                "p": "x",
+                "v": "770",
+                "vt": "num"
+            },
+            {
+                "p": "y",
+                "v": "570",
+                "vt": "num"
+            },
+            {
+                "p": "size",
+                "v": "1350",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6762a788cdca0f31",
+        "type": "inject",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP folder KAT",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "filename",
+                "v": "/CAM_KAT/",
+                "vt": "str"
+            },
+            {
+                "p": "x",
+                "v": "900",
+                "vt": "num"
+            },
+            {
+                "p": "y",
+                "v": "1100",
+                "vt": "num"
+            },
+            {
+                "p": "size",
+                "v": "720",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c567643c2894f648",
+        "type": "switch",
+        "z": "b0f4f7473d33c794",
+        "name": "date filter",
+        "property": "date",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "25041000000000",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 740,
+        "y": 240,
+        "wires": [
+            [
+                "b476622a669360a8"
+            ]
+        ]
+    },
+    {
+        "id": "f194ca1d32206979",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "date time extraction",
+        "func": "var str = msg.payload.name;\nstr = str.substring(0, str.length - 4);\nmsg.time = Number(str.slice(7));\nmsg.date = Number(str.slice(1));\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "c567643c2894f648"
+            ]
+        ]
+    },
+    {
+        "id": "ff0c3d12777c0d73",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "filter files",
+        "info": "",
+        "x": 160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7bed749635238cf2",
+        "type": "ftp in",
+        "z": "b0f4f7473d33c794",
+        "ftp": "f69079dc874018d4",
+        "operation": "list",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 490,
+        "y": 760,
+        "wires": [
+            [
+                "33a41ab0c6a553d9"
+            ]
+        ]
+    },
+    {
+        "id": "a399253564bc3e21",
+        "type": "inject",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP folder",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "filename",
+                "v": "/CAM_KAT/",
+                "vt": "str"
+            },
+            {
+                "p": "x",
+                "v": "900",
+                "vt": "num"
+            },
+            {
+                "p": "y",
+                "v": "1100",
+                "vt": "num"
+            },
+            {
+                "p": "size",
+                "v": "720",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 760,
+        "wires": [
+            [
+                "6917c9b0a0ba737c"
+            ]
+        ]
+    },
+    {
+        "id": "6917c9b0a0ba737c",
+        "type": "change",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "folder",
+                "pt": "msg",
+                "to": "filename",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 760,
+        "wires": [
+            [
+                "7bed749635238cf2"
+            ]
+        ]
+    },
+    {
+        "id": "2e7b4ab97b5adf6f",
+        "type": "comment",
+        "z": "b0f4f7473d33c794",
+        "name": "FTP latest image",
+        "info": "",
+        "x": 180,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "33a41ab0c6a553d9",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "latest",
+        "func": "var str = msg.payload[0].name;\nstr = str.substring(0, str.length - 4);\nvar largest = Number(str.slice(1));\nvar datetime = 0;\n\nfor (var i = 0; i < msg.payload.length; i++) {\n    if (msg.payload[i].type == \"-\")\n    {\n        str = msg.payload[i].name;\n         str = str.substring(0, str.length - 4);\n        datetime = Number(str.slice(1));\n  \n    if ( datetime > largest ) {\n        largest = datetime;\n        //msg.payload = msg.payload[i];\n        }\n    \n    \n  }\n}\n\n\nmsg.filename = \"P\" + largest + \".jpg\"; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 760,
+        "wires": [
+            [
+                "885c87bfb2a4aee6"
+            ]
+        ]
+    },
+    {
+        "id": "dbb6d262304eb429",
+        "type": "jimp-image",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "x",
+        "parameter1Type": "msg",
+        "parameter2": "y",
+        "parameter2Type": "msg",
+        "parameter3": "size",
+        "parameter3Type": "msg",
+        "parameter4": "size",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 830,
+        "y": 860,
+        "wires": [
+            [
+                "d0fb67bf164b57ef"
+            ]
+        ]
+    },
+    {
+        "id": "d0fb67bf164b57ef",
+        "type": "image viewer",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 950,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "979f6a535014f244",
+        "type": "ftp in",
+        "z": "b0f4f7473d33c794",
+        "ftp": "f69079dc874018d4",
+        "operation": "get",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 950,
+        "y": 760,
+        "wires": [
+            [
+                "d2b771fa59e0ed4f"
+            ]
+        ]
+    },
+    {
+        "id": "3e171114a128d86c",
+        "type": "file in",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "filename": "localFilename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "base64",
+        "allProps": false,
+        "x": 700,
+        "y": 860,
+        "wires": [
+            [
+                "dbb6d262304eb429"
+            ]
+        ]
+    },
+    {
+        "id": "885c87bfb2a4aee6",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "folder sorting",
+        "func": "msg.localFolder = \"C:/Users/LouisLeDucTheGreatBu/TGBB Dropbox/TGBB R&D +/MM-Monitor and Measure/MM001 System Monitoring/camera/Training images\"\n+ msg.folder;\nmsg.localFilename = msg.localFolder + msg.filename;\n\nmsg.filename = msg.folder + msg.filename;\nmsg.originalFilename = msg.filename;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 760,
+        "wires": [
+            [
+                "979f6a535014f244",
+                "fcbc922002692967"
+            ]
+        ]
+    },
+    {
+        "id": "fcbc922002692967",
+        "type": "delay",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 980,
+        "y": 700,
+        "wires": [
+            [
+                "0437325fcb590cd9"
+            ]
+        ]
+    },
+    {
+        "id": "c04421eda317dd22",
+        "type": "file",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "filename": "localFolder",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1300,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0437325fcb590cd9",
+        "type": "function",
+        "z": "b0f4f7473d33c794",
+        "name": "create folder",
+        "func": "msg.localFolder = msg.localFolder + \"a.txt\"\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 700,
+        "wires": [
+            [
+                "c04421eda317dd22"
+            ]
+        ]
+    },
+    {
+        "id": "d2b771fa59e0ed4f",
+        "type": "delay",
+        "z": "b0f4f7473d33c794",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 900,
+        "y": 800,
+        "wires": [
+            [
+                "3e171114a128d86c"
+            ]
+        ]
+    },
+    {
+        "id": "12fb893f3d5c0488",
+        "type": "ftp in",
+        "z": "a1d770f327e26cc6",
+        "ftp": "f69079dc874018d4",
+        "operation": "list",
+        "filename": "",
+        "localFilename": "",
+        "name": "list ftp",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "9d4bfdcd71b97590"
+            ]
+        ]
+    },
+    {
+        "id": "38772e81043ce7e9",
+        "type": "debug",
+        "z": "a1d770f327e26cc6",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a45b092e2929386a",
+        "type": "inject",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "props": [
+            {
+                "p": "filename",
+                "v": "/CatchCam/",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "12fb893f3d5c0488"
+            ]
+        ]
+    },
+    {
+        "id": "9d4bfdcd71b97590",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "load folders",
+        "func": "var list = msg.payload;\n\ncontext.set ('list',list);\nvar newmsg = {};\nvar a = [] ;\nvar num = 0;\n\nfor (var key in list){\n   if(list[key].type == \"d\") \n   {\n       \n       if (list[key].name.includes('CAM') )\n       {\n            num ++;\n         \n            var b = {[list[key].name] : list[key].name};\n            a.push(b);\n       }\n      \n   }\n    \n    }\n// c = {\"manual\" : 10}\n//a.push(c);\n\n//flow.set('presets', list);\n//global.set('locSettings', list);\nnewmsg.options = a;\nflow.set ('folders',a);\nmsg.payload = list;\nreturn newmsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "a92f66350b21f699"
+            ]
+        ]
+    },
+    {
+        "id": "8ec77ad692d50add",
+        "type": "ui_button",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Load Folders",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 60,
+        "wires": [
+            [
+                "12fb893f3d5c0488"
+            ]
+        ]
+    },
+    {
+        "id": "a92f66350b21f699",
+        "type": "ui_dropdown",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "label": "Folders",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d2cfead90bb477f0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 440,
+        "y": 140,
+        "wires": [
+            [
+                "aef1d941b28ddd0b"
+            ]
+        ]
+    },
+    {
+        "id": "1c0bc69cfe4173e5",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "folder",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aef1d941b28ddd0b",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "set folder path",
+        "func": "flow.set('FTP_folder', \"/CatchCam/\" + msg.payload + \"/\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "1c0bc69cfe4173e5"
+            ]
+        ]
+    },
+    {
+        "id": "a384cfa3d0690f7d",
+        "type": "olfnf-folder-listing",
+        "z": "a1d770f327e26cc6",
+        "folder": "path",
+        "folder_type": "flow",
+        "subfolder": false,
+        "filter": "folders",
+        "ignoreempty": true,
+        "masks": "*.*",
+        "masksregex": false,
+        "name": "",
+        "x": 970,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51c7021d348cbdc3",
+        "type": "inject",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "path",
+        "payload": "C:\\Users\\LouisLeDucTheGreatBu\\TGBB Dropbox\\TGBB RnD\\MM-Monitor and Measure\\MM002 Catchment Monitoring\\Image recognition\\Training images\\KAT_model v3\\",
+        "payloadType": "str",
+        "x": 630,
+        "y": 60,
+        "wires": [
+            [
+                "4b7439c7cd25c7f9",
+                "d5c6b97423c70247"
+            ]
+        ]
+    },
+    {
+        "id": "4b7439c7cd25c7f9",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "path",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 60,
+        "wires": [
+            [
+                "a384cfa3d0690f7d"
+            ]
+        ]
+    },
+    {
+        "id": "8e2456680eb563da",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "local path load",
+        "func": "if (msg.topic == \"path\")\n{\n    context.set('path',msg.payload);\n}\n\nif (msg.topic == \"category\")\n{\n    context.set('category',msg.payload);\n}\nvar category = context.get('category');\nvar path = flow.get('path');\nflow.set('currentPath', path + \"uncertain\\\\\" + category)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "5cee58e3d4d290f1"
+            ]
+        ]
+    },
+    {
+        "id": "f78a8770e6eba55f",
+        "type": "ui_dropdown",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "label": "class",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "bc6726098f838573",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "Full",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Half",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Empty",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "64e45d892d1bc45e"
+            ]
+        ]
+    },
+    {
+        "id": "5cee58e3d4d290f1",
+        "type": "ui_button",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "bc6726098f838573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Load Local Files ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "10ef93db0ff01272"
+            ]
+        ]
+    },
+    {
+        "id": "10ef93db0ff01272",
+        "type": "olfnf-folder-listing",
+        "z": "a1d770f327e26cc6",
+        "folder": "currentPath",
+        "folder_type": "flow",
+        "subfolder": false,
+        "filter": "files",
+        "ignoreempty": true,
+        "masks": "*.*",
+        "masksregex": false,
+        "name": "",
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "956e8fb4cc8ebe7c",
+                "38772e81043ce7e9"
+            ]
+        ]
+    },
+    {
+        "id": "64e45d892d1bc45e",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "category",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "8e2456680eb563da"
+            ]
+        ]
+    },
+    {
+        "id": "e97b455338edccb1",
+        "type": "jimp-image",
+        "z": "a1d770f327e26cc6",
+        "name": "base64",
+        "data": "file",
+        "dataType": "flow",
+        "ret": "b64",
+        "parameter1": "FONT_SANS_128_WHITE",
+        "parameter1Type": "jimpFont",
+        "parameter2": "0",
+        "parameter2Type": "num",
+        "parameter3": "0",
+        "parameter3Type": "num",
+        "parameter4": "payload[0].class",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "none",
+        "parameter6": "",
+        "parameter6Type": "none",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "image",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 720,
+        "y": 420,
+        "wires": [
+            [
+                "8458eba6c771267b"
+            ]
+        ]
+    },
+    {
+        "id": "8458eba6c771267b",
+        "type": "template",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{image}}}\">",
+        "output": "str",
+        "x": 880,
+        "y": 420,
+        "wires": [
+            [
+                "723f5beac811ba12"
+            ]
+        ]
+    },
+    {
+        "id": "723f5beac811ba12",
+        "type": "ui_template",
+        "z": "a1d770f327e26cc6",
+        "group": "bc6726098f838573",
+        "name": "frame picture",
+        "order": 4,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1050,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8f81d3890d92449",
+        "type": "ui_dropdown",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "label": "actual class",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "bc6726098f838573",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "Full",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Half",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Empty",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Discard",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 930,
+        "y": 480,
+        "wires": [
+            [
+                "b2dbcf84ea3a5c53",
+                "ed6131c946936fc6"
+            ]
+        ]
+    },
+    {
+        "id": "b2dbcf84ea3a5c53",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "local path move",
+        "func": "context.set('category',msg.payload);\n\nvar path = flow.get('path');\nflow.set('destinationPath', path + \"Sorted\\\\\" + msg.payload + \"\\\\\" + flow.get(\"filename\"));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8791d3077de01673",
+        "type": "ui_button",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "bc6726098f838573",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Save",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "a679297e44be44ba",
+                "1af5c43e87bdbf24"
+            ]
+        ]
+    },
+    {
+        "id": "c394b083df7ab9fc",
+        "type": "olfnf-file-operations",
+        "z": "a1d770f327e26cc6",
+        "operation": "move",
+        "source_file": "file",
+        "source_file_type": "flow",
+        "target_file": "destinationPath",
+        "target_file_type": "flow",
+        "create_directory": true,
+        "name": "",
+        "x": 400,
+        "y": 500,
+        "wires": [
+            [
+                "5cee58e3d4d290f1"
+            ]
+        ]
+    },
+    {
+        "id": "ed6131c946936fc6",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "newClass",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5c6b97423c70247",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "logfile",
+        "func": "flow.set('logPath', msg.payload + \"correctedClasses.csv\")\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "956e8fb4cc8ebe7c",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "file data",
+        "func": "\n\n\nmsg.amount = msg.payload.length;\n\nif (msg.amount == 0)\n{\nmsg.time = \"\";\nmsg.date = \"\";\nmsg.enabled = false;\nreturn msg;\n}\n\n\n\nvar arr = msg.payload[0].split(\"\\\\\");\n\nvar filename = arr[arr.length - 1];\n\nflow.set('filename', filename);\nflow.set('file', msg.payload[0]);\n\nvar str = filename;\nstr = str.substring(0, str.length - 4);\nmsg.time = filename; //Number(str.slice(7));\n//msg.date = Number(str.slice(1));\nmsg.enabled = true;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 420,
+        "wires": [
+            [
+                "e97b455338edccb1",
+                "75e45e26e68b4d21",
+                "fa8bbfcbb92c5fcf",
+                "f7a3d46f9de09fb2",
+                "8791d3077de01673"
+            ]
+        ]
+    },
+    {
+        "id": "320c221d2ed5a851",
+        "type": "template",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{flow.filename}};{{flow.class}};{{flow.newClass}}",
+        "output": "str",
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "4aba6c1f7613b5c2"
+            ]
+        ]
+    },
+    {
+        "id": "4aba6c1f7613b5c2",
+        "type": "file",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 560,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a679297e44be44ba",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "logPath",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "320c221d2ed5a851",
+                "c394b083df7ab9fc"
+            ]
+        ]
+    },
+    {
+        "id": "75e45e26e68b4d21",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 480,
+        "wires": [
+            [
+                "c8f81d3890d92449"
+            ]
+        ]
+    },
+    {
+        "id": "1af5c43e87bdbf24",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "stats",
+        "func": "var fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\n\nswitch(newClass) {\n  case \"Full\":\n    fullAmount ++;\n    break;\n  case \"Half\":\n    halfAmount++;\n    break;\n  case \"Empty\":\n    emptyAmount ++;\n    break;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa8bbfcbb92c5fcf",
+        "type": "ui_text",
+        "z": "a1d770f327e26cc6",
+        "group": "bc6726098f838573",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "images: ",
+        "format": "{{msg.amount}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f7a3d46f9de09fb2",
+        "type": "ui_text",
+        "z": "a1d770f327e26cc6",
+        "group": "bc6726098f838573",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "time:",
+        "format": "{{msg.date}} {{msg.time}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 710,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "bb7d4b0.4eee0b8",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "150",
+        "parameter1Type": "num",
+        "parameter2": "255",
+        "parameter2Type": "num",
+        "parameter3": "true",
+        "parameter3Type": "bool",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 3,
+        "jimpFunction": "threshold",
+        "selectedJimpFunction": {
+            "name": "threshold",
+            "fn": "threshold",
+            "description": "apply one or more functions",
+            "parameters": [
+                {
+                    "name": "max",
+                    "group": "options",
+                    "type": "num",
+                    "required": true,
+                    "hint": "max value of byte 0 ~ 255"
+                },
+                {
+                    "name": "replace",
+                    "group": "options",
+                    "type": "num",
+                    "required": false,
+                    "hint": "replace with byte 0 ~ 255. Default is 255"
+                },
+                {
+                    "name": "autoGreyscale",
+                    "group": "options",
+                    "type": "bool",
+                    "required": false,
+                    "hint": "default is true"
+                }
+            ]
+        },
+        "x": 260,
+        "y": 40,
+        "wires": [
+            [
+                "b3b7ec90.139e9"
+            ]
+        ]
+    },
+    {
+        "id": "35ab66e0.14586a",
+        "type": "image viewer",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 890,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3b7ec90.139e9",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "invert",
+        "selectedJimpFunction": {
+            "name": "invert",
+            "fn": "invert",
+            "description": "invert the image colours",
+            "parameters": []
+        },
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "35ab66e0.14586a",
+                "28be22dd5b4ec063"
+            ]
+        ]
+    },
+    {
+        "id": "5e56d9eb7039dc90",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "1950",
+        "parameter1Type": "num",
+        "parameter2": "0",
+        "parameter2Type": "num",
+        "parameter3": "600",
+        "parameter3Type": "num",
+        "parameter4": "60",
+        "parameter4Type": "num",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "bb7d4b0.4eee0b8"
+            ]
+        ]
+    },
+    {
+        "id": "28be22dd5b4ec063",
+        "type": "tesseract",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "language": "eng",
+        "x": 760,
+        "y": 80,
+        "wires": [
+            [
+                "16c91d2fe20a7da5",
+                "fc51a719b9dd846a"
+            ]
+        ]
+    },
+    {
+        "id": "2ffeb79ebc34521f",
+        "type": "image viewer",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "width": "1000",
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 110,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16c91d2fe20a7da5",
+        "type": "split",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "splt": " ",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "key",
+        "x": 750,
+        "y": 40,
+        "wires": [
+            [
+                "d0faf71edb4670f3"
+            ]
+        ]
+    },
+    {
+        "id": "e87591b95cf45274",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0faf71edb4670f3",
+        "type": "switch",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 970,
+        "y": 40,
+        "wires": [
+            [
+                "e87591b95cf45274"
+            ],
+            [
+                "2079c7ee285987d4"
+            ]
+        ]
+    },
+    {
+        "id": "e12701d0ef651af6",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2079c7ee285987d4",
+        "type": "split",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "key",
+        "x": 970,
+        "y": 80,
+        "wires": [
+            [
+                "760cd1e3155a2455"
+            ]
+        ]
+    },
+    {
+        "id": "760cd1e3155a2455",
+        "type": "switch",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 120,
+        "wires": [
+            [
+                "e12701d0ef651af6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "20f9816b8474b3ee",
+        "type": "olfnf-folder-listing",
+        "z": "74e145a951bbb86a",
+        "folder": "C:\\Users\\LouisLeDucTheGreatBu\\PictureTest",
+        "folder_type": "str",
+        "subfolder": false,
+        "filter": "files",
+        "ignoreempty": true,
+        "masks": "*.*",
+        "masksregex": false,
+        "name": "",
+        "x": 470,
+        "y": 1200,
+        "wires": [
+            [
+                "4b72f8b78d101e7d"
+            ]
+        ]
+    },
+    {
+        "id": "c0eebb214237c4ea",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "folder path",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "folderlist",
+        "payload": "C:\\Users\\LouisLeDucTheGreatBu\\PictureTest",
+        "payloadType": "str",
+        "x": 320,
+        "y": 1200,
+        "wires": [
+            [
+                "20f9816b8474b3ee"
+            ]
+        ]
+    },
+    {
+        "id": "7da6db20d45868a3",
+        "type": "debug",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "0d4d5e926240d105",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "full",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "100",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1000,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "6f9ee219c96b0df2",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "75%",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "75",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1040,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "f7f80a4ede634655",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "50%",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "50",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1080,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "20ab4da44697429a",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "25%",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1120,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "8bee1b583d31d01a",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "empty",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1160,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "6a316d2bb6206602",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "backflow",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 120,
+        "y": 1260,
+        "wires": [
+            [
+                "868cfbd0745d84b9"
+            ]
+        ]
+    },
+    {
+        "id": "0ab761d66eb2fd10",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "save",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "save",
+        "payload": "4",
+        "payloadType": "num",
+        "x": 310,
+        "y": 1120,
+        "wires": [
+            [
+                "4b72f8b78d101e7d"
+            ]
+        ]
+    },
+    {
+        "id": "2137c61962ec9e2f",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Catch",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b72f8b78d101e7d",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "func": "if (msg.topic == \"folderlist\")\n{\n    context.set(\"folderlist\", msg.payload);\n    context.set(\"nr\", 1);\n    msg.payload = \"\";\n    node.status({fill:\"blue\",shape:\"ring\",text:\"waiting\"}); \n    msg.payload = context.get(\"folderlist[0]\");\n    \n    return [msg, null];\n}\nif (msg.topic == \"save\")\n{\n    var nr =context.get (\"nr\");\n    var catchy =flow.get(\"Catch\") ;\n    var backflow =flow.get(\"backflow\") ;\n    if (catchy ==\"\")\n    {\n       node.status({fill:\"red\",shape:\"dot\",text:\"no catch input\"}); \n        return;\n    }\n    if (backflow ==\"\")\n    {\n       node.status({fill:\"red\",shape:\"dot\",text:\"no backflow input\"}); \n        return;\n    }\n    flow.set(\"prevCatch\", catchy);\n    var str =  nr + \";\" + flow.get(\"camname\") + \";\" + flow.get(\"datetime\") + \";\" + catchy + \";\" + backflow;\n    var msg2 = {};\n    msg2.payload = str;\n    msg2.previmg = context.get(\"folderlist[\"+ (nr-1) + \"]\");\n    msg.payload = context.get(\"folderlist[\"+ nr + \"]\");\n    msg.percentage = catchy;\n    nr = nr + 1;\n    context.set(\"nr\",nr);\n    \n    \n    node.status({fill:\"green\",shape:\"dot\",text:str}); \n    return [msg,msg2];\n}\nreturn;",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "context.set(\"nr\", 0);\nnode.status({fill:\"red\",shape:\"dot\",text:\"no folder loaded\"}); ",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1120,
+        "wires": [
+            [
+                "5e56d9eb7039dc90",
+                "2ffeb79ebc34521f",
+                "950b910580f73989",
+                "696f92ca.600a9c"
+            ],
+            [
+                "fab62de56f076115"
+            ]
+        ]
+    },
+    {
+        "id": "491d2cf5a234588f",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "datetime",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc51a719b9dd846a",
+        "type": "split",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "key",
+        "x": 890,
+        "y": 120,
+        "wires": [
+            [
+                "ffcf16d02bb3ecd5"
+            ]
+        ]
+    },
+    {
+        "id": "ffcf16d02bb3ecd5",
+        "type": "delay",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 160,
+        "wires": [
+            [
+                "491d2cf5a234588f"
+            ]
+        ]
+    },
+    {
+        "id": "a9efcb5809809ecb",
+        "type": "comment",
+        "z": "74e145a951bbb86a",
+        "name": "CSV adding",
+        "info": "",
+        "x": 890,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "14cc6e9ba929db05",
+        "type": "file",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 880,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "950b910580f73989",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "0",
+        "parameter1Type": "num",
+        "parameter2": "0",
+        "parameter2Type": "num",
+        "parameter3": "320",
+        "parameter3Type": "num",
+        "parameter4": "60",
+        "parameter4Type": "num",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "4d590bf0ee53128e"
+            ]
+        ]
+    },
+    {
+        "id": "4d590bf0ee53128e",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "150",
+        "parameter1Type": "num",
+        "parameter2": "255",
+        "parameter2Type": "num",
+        "parameter3": "true",
+        "parameter3Type": "bool",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 3,
+        "jimpFunction": "threshold",
+        "selectedJimpFunction": {
+            "name": "threshold",
+            "fn": "threshold",
+            "description": "apply one or more functions",
+            "parameters": [
+                {
+                    "name": "max",
+                    "group": "options",
+                    "type": "num",
+                    "required": true,
+                    "hint": "max value of byte 0 ~ 255"
+                },
+                {
+                    "name": "replace",
+                    "group": "options",
+                    "type": "num",
+                    "required": false,
+                    "hint": "replace with byte 0 ~ 255. Default is 255"
+                },
+                {
+                    "name": "autoGreyscale",
+                    "group": "options",
+                    "type": "bool",
+                    "required": false,
+                    "hint": "default is true"
+                }
+            ]
+        },
+        "x": 260,
+        "y": 120,
+        "wires": [
+            [
+                "1cb5cbfe336263ae"
+            ]
+        ]
+    },
+    {
+        "id": "1cb5cbfe336263ae",
+        "type": "jimp-image",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "invert",
+        "selectedJimpFunction": {
+            "name": "invert",
+            "fn": "invert",
+            "description": "invert the image colours",
+            "parameters": []
+        },
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "a44bf9b228310002",
+                "be90276932f4a239"
+            ]
+        ]
+    },
+    {
+        "id": "a44bf9b228310002",
+        "type": "image viewer",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 890,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be90276932f4a239",
+        "type": "tesseract",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "language": "eng",
+        "x": 760,
+        "y": 160,
+        "wires": [
+            [
+                "0961f5e2484e9ee5"
+            ]
+        ]
+    },
+    {
+        "id": "0961f5e2484e9ee5",
+        "type": "split",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "key",
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "90dd41812a3958eb"
+            ]
+        ]
+    },
+    {
+        "id": "90dd41812a3958eb",
+        "type": "delay",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            [
+                "741fb92284494b5a"
+            ]
+        ]
+    },
+    {
+        "id": "741fb92284494b5a",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "camname",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34a0d78f4501fac2",
+        "type": "olfnf-file-operations",
+        "z": "74e145a951bbb86a",
+        "operation": "move",
+        "source_file": "filepath",
+        "source_file_type": "msg",
+        "target_file": "subpath",
+        "target_file_type": "msg",
+        "create_directory": true,
+        "name": "",
+        "x": 1020,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fab62de56f076115",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "func": "if (msg.topic == \"folderlist\")\n{\n    return;\n}\n\n\n    msg.filepath = context.get(\"filepath\");\n    msg.subpath =context.get(\"subpath\");\n    var path = global.get('path');//= require(\"path\");\n    var filepath = msg.previmg;\n    var dir = path.parse(filepath).dir;\n    var base = path.basename(filepath);\n    var subpath = dir + \"\\\\\" + \"Processed\" + \"\\\\\" + flow.get(\"prevCatch\") + \"\\\\\" + base;\n    context.set(\"filepath\", filepath);\n    context.set(\"subpath\", subpath);\n    msg.filename = dir + \"\\\\\" + \"Processed\" + \"\\\\\" + \"data.csv\"\n    flow.set(\"prevCatch\", flow.get(\"catch\"));\n    flow.set(\"Catch\", \"\");\n     flow.set(\"backflow\", \"\");\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1200,
+        "wires": [
+            [
+                "34a0d78f4501fac2",
+                "14cc6e9ba929db05",
+                "83025b5416034f79"
+            ]
+        ]
+    },
+    {
+        "id": "28136f33cb99adf8",
+        "type": "comment",
+        "z": "74e145a951bbb86a",
+        "name": "Moving File after adding to database",
+        "info": "",
+        "x": 920,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "df158a29e7152c76",
+        "type": "ui_template",
+        "z": "74e145a951bbb86a",
+        "group": "6c4f01e555a0a282",
+        "name": "",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 560,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "696f92ca.600a9c",
+        "type": "ui_template",
+        "z": "74e145a951bbb86a",
+        "group": "8924e22f.e375e",
+        "name": "",
+        "order": 1,
+        "width": "10",
+        "height": "5",
+        "format": "\n \n <img width=\"100%\" height=\"100%\" alt=\"Image not found\" src=\"{{msg.payload}}\" />\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "868cfbd0745d84b9",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "backflow",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "080c2f153403645f",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "no backflow",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "x": 130,
+        "y": 1300,
+        "wires": [
+            [
+                "868cfbd0745d84b9"
+            ]
+        ]
+    },
+    {
+        "id": "39e87ed29a7b4b12",
+        "type": "ui_slider",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "Catch percentage",
+        "tooltip": "",
+        "group": "8924e22f.e375e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 310,
+        "y": 1060,
+        "wires": [
+            [
+                "2137c61962ec9e2f"
+            ]
+        ]
+    },
+    {
+        "id": "83025b5416034f79",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 1020,
+        "wires": [
+            [
+                "39e87ed29a7b4b12"
+            ]
+        ]
+    },
+    {
+        "id": "9124ba943038d902",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "8924e22f.e375e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Backflow",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 1300,
+        "wires": [
+            [
+                "868cfbd0745d84b9"
+            ]
+        ]
+    },
+    {
+        "id": "364e0357c4398de4",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "8924e22f.e375e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "No Backflow",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "868cfbd0745d84b9"
+            ]
+        ]
+    },
+    {
+        "id": "3af29763eca41d32",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.x",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1880,
+        "wires": [
+            [
+                "52891db751605537"
+            ]
+        ]
+    },
+    {
+        "id": "9045849efa6108e2",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.y",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1920,
+        "wires": [
+            [
+                "7d6c634fdea0f64d"
+            ]
+        ]
+    },
+    {
+        "id": "52891db751605537",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "x",
+        "tooltip": "",
+        "group": "4aa367c113b70963",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 730,
+        "y": 1880,
+        "wires": [
+            [
+                "d54c73186571eddd"
+            ]
+        ]
+    },
+    {
+        "id": "7d6c634fdea0f64d",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "y",
+        "tooltip": "",
+        "group": "4aa367c113b70963",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 730,
+        "y": 1920,
+        "wires": [
+            [
+                "cd625c6f746cad36"
+            ]
+        ]
+    },
+    {
+        "id": "d54c73186571eddd",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locSetting.x",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 1880,
+        "wires": [
+            [
+                "db3d26f362cbc415"
+            ]
+        ]
+    },
+    {
+        "id": "cd625c6f746cad36",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locSetting.y",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 1920,
+        "wires": [
+            [
+                "db3d26f362cbc415"
+            ]
+        ]
+    },
+    {
+        "id": "662d4e6b90eb6135",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "size",
+        "tooltip": "",
+        "group": "4aa367c113b70963",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 730,
+        "y": 1960,
+        "wires": [
+            [
+                "e292594ec54daa67"
+            ]
+        ]
+    },
+    {
+        "id": "2a4e1fbe33688719",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.size",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1960,
+        "wires": [
+            [
+                "662d4e6b90eb6135"
+            ]
+        ]
+    },
+    {
+        "id": "e292594ec54daa67",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locSetting.size",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 1960,
+        "wires": [
+            [
+                "db3d26f362cbc415"
+            ]
+        ]
+    },
+    {
+        "id": "f8f01c548d2e8517",
+        "type": "ui_dropdown",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "4aa367c113b70963",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 720,
+        "y": 1800,
+        "wires": [
+            [
+                "cc041a14b87883b0",
+                "7405203881c78732"
+            ]
+        ]
+    },
+    {
+        "id": "019623a5053e604b",
+        "type": "inject",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1640,
+        "wires": [
+            [
+                "ecd587d5e791c49f"
+            ]
+        ]
+    },
+    {
+        "id": "cbd75925f4abda5a",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.folder",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7405203881c78732",
+        "type": "debug",
+        "z": "74e145a951bbb86a",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "452088afd10a617d",
+        "type": "ui_ui_control",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "events": "change",
+        "x": 420,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d1b8b5a9f28e6fc",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "6b3ffe54bcf95fda",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "restore",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "a",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1860,
+        "wires": [
+            [
+                "cc041a14b87883b0"
+            ]
+        ]
+    },
+    {
+        "id": "1af68b21ee8d763b",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "6b3ffe54bcf95fda",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "back",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"tab\":\"Catch Cam\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 1720,
+        "wires": [
+            [
+                "452088afd10a617d"
+            ]
+        ]
+    },
+    {
+        "id": "9f1b273a291342fe",
+        "type": "link in",
+        "z": "74e145a951bbb86a",
+        "name": "settings button",
+        "links": [],
+        "x": 255,
+        "y": 1760,
+        "wires": [
+            [
+                "452088afd10a617d",
+                "cc041a14b87883b0"
+            ]
+        ]
+    },
+    {
+        "id": "cc041a14b87883b0",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "Global loc settings",
+        "func": "var locations = global.get('locSettings');\nvar location = locations[msg.payload];\nmsg.payload = location;\nflow.set(\"locSettings\", location);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1860,
+        "wires": [
+            [
+                "7405203881c78732",
+                "d7121eef3410287b",
+                "3af29763eca41d32",
+                "9045849efa6108e2",
+                "2a4e1fbe33688719",
+                "cbd75925f4abda5a",
+                "0e9589a84b1127b1"
+            ]
+        ]
+    },
+    {
+        "id": "d7121eef3410287b",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ID",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 1800,
+        "wires": [
+            [
+                "f8f01c548d2e8517",
+                "e59a75d8fb828cf4"
+            ]
+        ]
+    },
+    {
+        "id": "0e9589a84b1127b1",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "locSettings.mailTo",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 2040,
+        "wires": [
+            [
+                "3e94f7aa06a32a41"
+            ]
+        ]
+    },
+    {
+        "id": "3e94f7aa06a32a41",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "mailTo",
+        "tooltip": "",
+        "group": "4aa367c113b70963",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 730,
+        "y": 2040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecd587d5e791c49f",
+        "type": "file in",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "filename": "locSettings.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 1640,
+        "wires": [
+            [
+                "48e5ea5f25709b92"
+            ]
+        ]
+    },
+    {
+        "id": "48e5ea5f25709b92",
+        "type": "json",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 1640,
+        "wires": [
+            [
+                "5e61bd7268e466a2"
+            ]
+        ]
+    },
+    {
+        "id": "5e61bd7268e466a2",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "load locations",
+        "func": "var list = msg.payload;\ncontext.set ('list',list);\nvar newmsg = {};\nvar a = [] \n\nfor (var key in list){\n    var b = {[list[key].folder] : key};\n    a.push(b);\n    }\n// c = {\"manual\" : 10}\n//a.push(c);\n\nflow.set('presets', list);\nglobal.set('locSettings', list);\nnewmsg.options = a;\ncontext.set ('a',a);\nmsg.payload = list;\nreturn newmsg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1640,
+        "wires": [
+            [
+                "f8f01c548d2e8517"
+            ]
+        ]
+    },
+    {
+        "id": "e59a75d8fb828cf4",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "ID",
+        "tooltip": "",
+        "group": "4aa367c113b70963",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 810,
+        "y": 1760,
+        "wires": [
+            [
+                "db3d26f362cbc415",
+                "ae0f41e9ee7413f2"
+            ]
+        ]
+    },
+    {
+        "id": "db3d26f362cbc415",
+        "type": "link out",
+        "z": "74e145a951bbb86a",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [],
+        "x": 1095,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "ae0f41e9ee7413f2",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locSetting.ID",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a3a1e41e8611d38",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "4aa367c113b70963",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Save",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "a",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 2180,
+        "wires": [
+            [
+                "ec261f3b05168884"
+            ]
+        ]
+    },
+    {
+        "id": "ec261f3b05168884",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "save",
+        "func": "let locations = global.get('locSettings');\nlet location = flow.get(\"locSetting\");\n\n\n\nfor (let i = 0; i < locations.length; i++) {\n    if (locations[i].ID === location.ID) {\n        locations[i].folder = location.folder;\n        locations[i].x = location.x; \n        locations[i].y = location.y; \n        locations[i].size = location.size; \n    }\n}\n\nglobal.set(\"locSettings\",locations);\nmsg.payload = locations;\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 2180,
+        "wires": [
+            [
+                "18fc08d622e554e1",
+                "6fac427fc3dba280"
+            ]
+        ]
+    },
+    {
+        "id": "18fc08d622e554e1",
+        "type": "json",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 530,
+        "y": 2180,
+        "wires": [
+            [
+                "d711be96ec8bfc43"
+            ]
+        ]
+    },
+    {
+        "id": "6fac427fc3dba280",
+        "type": "debug",
+        "z": "74e145a951bbb86a",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "d711be96ec8bfc43",
+        "type": "file",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "filename": "locSettings.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 680,
+        "y": 2180,
+        "wires": [
+            [
+                "6fac427fc3dba280"
+            ]
+        ]
+    },
+    {
+        "id": "384aea2da9e030da",
+        "type": "function",
+        "z": "74e145a951bbb86a",
+        "name": "save",
+        "func": "var locations = global.get('locSettings') || [] ;\nvar len = Number(locations.length);\n//var folder = flow.get('locSettings.folder');\nvar location ={};\nObject.assign(location, {\n    \"folder\": flow.get('locSetting.folder'),\n    \"x\": flow.get('locSetting.x'),\n    \"y\": flow.get('locSetting.y'),\n    \"size\": flow.get('locSetting.size'),\n    \"mailTo\": flow.get('locSetting.mailTo'),\n});\n\nfor (let i = 0; i < locations.length; i++) {\n    if (locations[i].folder === location.folder) {\n            node.status({ fill: \"red\", shape: \"dot\", text: \"already exists:\" + location.folder });\n\n        return;\n        \n    }\n}\n\n\nlocation.ID = len;\nnode.status({ fill: \"green\", shape: \"dot\", text: location.folder });\n\n\n\nlocations.push(location);\nglobal.set('locSettings',locations);\n\nmsg.payload = locations;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 2020,
+        "wires": [
+            [
+                "6fac427fc3dba280"
+            ]
+        ]
+    },
+    {
+        "id": "efb5f59bfb95fcf6",
+        "type": "ui_button",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "group": "6b3ffe54bcf95fda",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "New location",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "a",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 2020,
+        "wires": [
+            [
+                "384aea2da9e030da"
+            ]
+        ]
+    },
+    {
+        "id": "c508092fd7d41184",
+        "type": "ui_text_input",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "6b3ffe54bcf95fda",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 840,
+        "y": 2000,
+        "wires": [
+            [
+                "c7698a9028a7b590"
+            ]
+        ]
+    },
+    {
+        "id": "c7698a9028a7b590",
+        "type": "change",
+        "z": "74e145a951bbb86a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locSetting.folder",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050,
+        "y": 2020,
+        "wires": [
+            []
+        ]
+    }
+]
