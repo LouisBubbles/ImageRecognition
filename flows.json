@@ -24,6 +24,45 @@
         "env": []
     },
     {
+        "id": "48b189d0ce4ed8ae",
+        "type": "tab",
+        "label": "Model improver FTP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7657c2001fc91fb1",
+        "type": "tab",
+        "label": "Remote Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e3cb4493e820818",
+        "type": "tab",
+        "label": "Object detection test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7519d37f263e8da4",
+        "type": "junction",
+        "z": "7657c2001fc91fb1",
+        "x": 699.4857358932495,
+        "y": 406.7714146375656,
+        "wires": [
+            [
+                "a7259d8374593284",
+                "83e146e9cbd4648d",
+                "bfb525d0acede588",
+                "e80e79954f0b8ebb"
+            ]
+        ]
+    },
+    {
         "id": "f86ca03fad76d4ee",
         "type": "ui_tab",
         "name": "Graphs",
@@ -159,10 +198,10 @@
         "id": "a03dd74e1e2b7cfb",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-custom",
             "lightTheme": {
                 "default": "#0094CE",
-                "baseColor": "#0094CE",
+                "baseColor": "#444ae6",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
@@ -174,51 +213,52 @@
                 "edited": false
             },
             "customTheme": {
-                "name": "Untitled Theme 1",
+                "name": "TGBB",
                 "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseColor": "#2930e2",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
+                    "default": "#4B7930",
+                    "value": "#2a30e2",
+                    "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#2930e2",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
                     "edited": false
                 },
+                "group-textColor": {
+                    "value": "#6c71eb",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#c5d4ff",
+                    "edited": true
+                },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -294,6 +334,156 @@
         "order": 3,
         "disp": true,
         "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dd649f7641ba0476",
+        "type": "ui_group",
+        "name": "settings",
+        "tab": "11cd9356041089b5",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a38fc3d6af43b83e",
+        "type": "ui_group",
+        "name": "Location 2",
+        "tab": "11cd9356041089b5",
+        "order": 4,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9b4453cb3f93a6bb",
+        "type": "ui_group",
+        "name": "Location 3",
+        "tab": "11cd9356041089b5",
+        "order": 5,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6b684f1798d3c9cb",
+        "type": "ui_group",
+        "name": "Location 4",
+        "tab": "11cd9356041089b5",
+        "order": 5,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1225e804c4caaa94",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.132",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "df295bdf341460da",
+        "type": "ui_group",
+        "name": "settings",
+        "tab": "11cd9356041089b5",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "152b1b0685e5e6de",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6fecc6b99f353e47",
+        "type": "ui_group",
+        "name": "Location 2",
+        "tab": "11cd9356041089b5",
+        "order": 4,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "82cbfaf79280e116",
+        "type": "ui_group",
+        "name": "Location 3",
+        "tab": "11cd9356041089b5",
+        "order": 5,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9d1211ba289a4227",
+        "type": "ui_group",
+        "name": "Location 4",
+        "tab": "11cd9356041089b5",
+        "order": 5,
+        "disp": true,
+        "width": "7",
         "collapse": false,
         "className": ""
     },
@@ -1326,195 +1516,6 @@
         ]
     },
     {
-        "id": "12fb893f3d5c0488",
-        "type": "ftp in",
-        "z": "a1d770f327e26cc6",
-        "ftp": "f69079dc874018d4",
-        "operation": "list",
-        "filename": "",
-        "localFilename": "",
-        "name": "list ftp",
-        "x": 490,
-        "y": 60,
-        "wires": [
-            [
-                "9d4bfdcd71b97590"
-            ]
-        ]
-    },
-    {
-        "id": "38772e81043ce7e9",
-        "type": "debug",
-        "z": "a1d770f327e26cc6",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "a45b092e2929386a",
-        "type": "inject",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "props": [
-            {
-                "p": "filename",
-                "v": "/CatchCam/",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "12fb893f3d5c0488"
-            ]
-        ]
-    },
-    {
-        "id": "9d4bfdcd71b97590",
-        "type": "function",
-        "z": "a1d770f327e26cc6",
-        "name": "load folders",
-        "func": "var list = msg.payload;\n\ncontext.set ('list',list);\nvar newmsg = {};\nvar a = [] ;\nvar num = 0;\n\nfor (var key in list){\n   if(list[key].type == \"d\") \n   {\n       \n       if (list[key].name.includes('CAM') )\n       {\n            num ++;\n         \n            var b = {[list[key].name] : list[key].name};\n            a.push(b);\n       }\n      \n   }\n    \n    }\n// c = {\"manual\" : 10}\n//a.push(c);\n\n//flow.set('presets', list);\n//global.set('locSettings', list);\nnewmsg.options = a;\nflow.set ('folders',a);\nmsg.payload = list;\nreturn newmsg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 60,
-        "wires": [
-            [
-                "a92f66350b21f699"
-            ]
-        ]
-    },
-    {
-        "id": "8ec77ad692d50add",
-        "type": "ui_button",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "group": "d2cfead90bb477f0",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Load Folders",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "12fb893f3d5c0488"
-            ]
-        ]
-    },
-    {
-        "id": "a92f66350b21f699",
-        "type": "ui_dropdown",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "label": "Folders",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "d2cfead90bb477f0",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "",
-                "value": "",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 800,
-        "y": 60,
-        "wires": [
-            [
-                "aef1d941b28ddd0b"
-            ]
-        ]
-    },
-    {
-        "id": "1c0bc69cfe4173e5",
-        "type": "change",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "folder",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1220,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "aef1d941b28ddd0b",
-        "type": "function",
-        "z": "a1d770f327e26cc6",
-        "name": "set folder path",
-        "func": "flow.set('FTP_folder', \"/CatchCam/\" + msg.payload + \"/\");\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 60,
-        "wires": [
-            [
-                "1c0bc69cfe4173e5"
-            ]
-        ]
-    },
-    {
         "id": "a384cfa3d0690f7d",
         "type": "olfnf-folder-listing",
         "z": "a1d770f327e26cc6",
@@ -1570,13 +1571,6 @@
         "rules": [
             {
                 "t": "set",
-                "p": "path",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "Empty",
@@ -1588,8 +1582,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 200,
+        "x": 200,
+        "y": 260,
         "wires": [
             [
                 "a384cfa3d0690f7d",
@@ -1602,14 +1596,14 @@
         "type": "function",
         "z": "a1d770f327e26cc6",
         "name": "local path load",
-        "func": "if (msg.topic == \"path\")\n{\n    context.set('path',msg.payload);\n}\n\nif (msg.topic == \"category\")\n{\n    context.set('category',msg.payload);\n}\nvar category = context.get('category');\nvar path = flow.get('path');\nflow.set('currentPath', path + \"uncertain\\\\\" + category)\n\nreturn msg;",
+        "func": "//if (msg.topic == \"path\")\n//{\n//    context.set('path',msg.payload + \"\\\\\");\n//}\n\nif (msg.topic == \"category\")\n{\n    context.set('category',msg.payload);\n}\n\nif (msg.topic == \"certainty\")\n{\n    context.set('certainty',msg.payload);\n    if (msg.payload == \"\\\\\")\n    {\n        flow.set('certainty', \"Certain\");\n      \n    }\n    else\n    {\n        flow.set('certainty', \"Uncertain\");\n        \n    }\n}\n\nvar category = context.get('category');\nvar certainty = context.get('certainty');\nvar path = flow.get('path');\nflow.set('currentPath', path + certainty + category)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 700,
         "y": 260,
         "wires": [
             [
@@ -1626,7 +1620,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "bc6726098f838573",
-        "order": 1,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1652,7 +1646,7 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 170,
+        "x": 350,
         "y": 260,
         "wires": [
             [
@@ -1666,7 +1660,7 @@
         "z": "a1d770f327e26cc6",
         "name": "",
         "group": "bc6726098f838573",
-        "order": 2,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1704,8 +1698,7 @@
         "y": 420,
         "wires": [
             [
-                "956e8fb4cc8ebe7c",
-                "38772e81043ce7e9"
+                "956e8fb4cc8ebe7c"
             ]
         ]
     },
@@ -1735,7 +1728,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 500,
         "y": 260,
         "wires": [
             [
@@ -1810,7 +1803,7 @@
         "z": "a1d770f327e26cc6",
         "group": "bc6726098f838573",
         "name": "frame picture",
-        "order": 4,
+        "order": 6,
         "width": "6",
         "height": "6",
         "format": "<div ng-bind-html=\"msg.payload\"></div>",
@@ -1834,7 +1827,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "bc6726098f838573",
-        "order": 6,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -1879,7 +1872,7 @@
         "type": "function",
         "z": "a1d770f327e26cc6",
         "name": "local path move",
-        "func": "context.set('category',msg.payload);\n\nvar path = flow.get('path');\nflow.set('destinationPath', path + \"Sorted\\\\\" + msg.payload + \"\\\\\" + flow.get(\"filename\"));\n\nreturn msg;",
+        "func": "context.set('category',msg.payload);\n\nvar path = flow.get('path');\nflow.set('destinationPath', path + \"\\\\Sorted\\\\\" + msg.payload + \"\\\\\" + flow.get(\"filename\"));\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1898,7 +1891,7 @@
         "z": "a1d770f327e26cc6",
         "name": "",
         "group": "bc6726098f838573",
-        "order": 7,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1913,11 +1906,11 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 170,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "a679297e44be44ba",
-                "1af5c43e87bdbf24"
+                "8f6d4757568fc3a9"
             ]
         ]
     },
@@ -1932,8 +1925,8 @@
         "target_file_type": "flow",
         "create_directory": true,
         "name": "",
-        "x": 400,
-        "y": 500,
+        "x": 380,
+        "y": 460,
         "wires": [
             [
                 "5cee58e3d4d290f1"
@@ -1970,7 +1963,7 @@
         "type": "function",
         "z": "a1d770f327e26cc6",
         "name": "logfile",
-        "func": "flow.set('logPath', msg.payload + \"correctedClasses.csv\")\nreturn msg;",
+        "func": "flow.set('path',  msg.payload );\nflow.set('logPath', msg.payload + \"\\\\correctedClasses.csv\");\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1988,7 +1981,7 @@
         "type": "function",
         "z": "a1d770f327e26cc6",
         "name": "file data",
-        "func": "\n\n\nmsg.amount = msg.payload.length;\n\nif (msg.amount == 0)\n{\nmsg.time = \"\";\nmsg.date = \"\";\nmsg.enabled = false;\nreturn msg;\n}\n\n\n\nvar arr = msg.payload[0].split(\"\\\\\");\n\nvar filename = arr[arr.length - 1];\n\nflow.set('filename', filename);\nflow.set('file', msg.payload[0]);\n\nvar str = filename;\nstr = str.substring(0, str.length - 4);\nmsg.time = filename; //Number(str.slice(7));\n//msg.date = Number(str.slice(1));\nmsg.enabled = true;\nreturn msg;",
+        "func": "\n\n\nmsg.amount = msg.payload.length;\n\nif (msg.amount == 0)\n{\nmsg.time = \"\";\nmsg.date = \"\";\nmsg.enabled = false;\nreturn msg;\n}\n\n\n\nvar arr = msg.payload[0].split(\"\\\\\");\n\n//var filename = arr[0];\nvar filename = arr[arr.length - 1];\n\nflow.set('filename', filename);\nflow.set('file', msg.payload[0]);\n\nvar str = filename;\nstr = str.substring(0, str.length - 4);\nmsg.time = filename; //Number(str.slice(7));\n//msg.date = Number(str.slice(1));\nmsg.enabled = true;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2003,7 +1996,7 @@
                 "75e45e26e68b4d21",
                 "fa8bbfcbb92c5fcf",
                 "f7a3d46f9de09fb2",
-                "8791d3077de01673"
+                "599e8f160a299f7f"
             ]
         ]
     },
@@ -2016,10 +2009,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{flow.filename}};{{flow.class}};{{flow.newClass}}",
+        "template": "{{flow.dateTime}};{{flow.filename}};{{flow.certainty}};{{flow.class}};{{flow.newClass}}",
         "output": "str",
-        "x": 400,
-        "y": 540,
+        "x": 760,
+        "y": 560,
         "wires": [
             [
                 "4aba6c1f7613b5c2"
@@ -2037,8 +2030,8 @@
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 560,
-        "y": 540,
+        "x": 900,
+        "y": 560,
         "wires": [
             []
         ]
@@ -2062,12 +2055,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 210,
-        "y": 540,
+        "x": 370,
+        "y": 560,
         "wires": [
             [
-                "320c221d2ed5a851",
-                "c394b083df7ab9fc"
+                "c394b083df7ab9fc",
+                "320c221d2ed5a851"
             ]
         ]
     },
@@ -2081,8 +2074,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "",
-                "tot": "str"
+                "to": "newClass",
+                "tot": "flow"
             }
         ],
         "action": "",
@@ -2102,15 +2095,15 @@
         "id": "1af5c43e87bdbf24",
         "type": "function",
         "z": "a1d770f327e26cc6",
-        "name": "stats",
-        "func": "if (msg.topic == \"reset\")\n{\n    context.set('fullAmount', 0);\ncontext.set('halfAmount', 0);\ncontext.set('emptyAmount', 0);\n}\n\nvar fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\nvar discardAmount = context.get('discardAmount') || 0;\n\nvar fullBefore = context.get('fullBefore') || 0;\nvar halfBefore = context.get('halfBefore') || 0;\nvar emptyBefore = context.get('emptyBefore') || 0;\n\nvar fullToFull = context.get('fullToFull') || 0;\nvar fullToHalf = context.get('fullToHalf') || 0;\nvar fullToEmpty = context.get('fullToEmpty') || 0;\nvar fullToDiscard = context.get('fullToDiscard') || 0;\n\nvar halfToFull = context.get('halfToFull') || 0;\nvar halfToHalf = context.get('halfToHalf') || 0;\nvar halfToEmpty = context.get('halfToEmpty') || 0;\nvar halfToDiscard = context.get('halfToDiscard') || 0;\n\nvar emptyToFull = context.get('emptyToFull') || 0;\nvar emptyToHalf = context.get('emptyToHalf') || 0;\nvar emptyToEmpty = context.get('emptyToEmpty') || 0;\nvar emptyToDiscard = context.get('emptyToDiscard') || 0;\n\nvar newClass = flow.get('newClass');\nvar oldClass = flow.get('class');\n\n\nswitch(oldClass) {\n  case \"Full\":\n    fullBefore ++;\n        switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                fullToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                fullToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                fullToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                fullToDiscard ++;\n            break;\n        }\n    break;\n  case \"Half\":\n    halfBefore++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                halfToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                halfToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                halfToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                halfToDiscard ++;\n            break;\n        }\n    break;\n  case \"Empty\":\n    emptyBefore ++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                emptyToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                emptyToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                emptyToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                emptyToDiscard ++;\n            break;\n        }\n    break;\n}\n\nif (msg.topic == \"reset\")\n{\n    fullAmount = 0;\n halfAmount = 0;\n  emptyAmount = 0;\n}\n\ncontext.set('fullAmount', fullAmount);\ncontext.set('halfAmount', halfAmount);\ncontext.set('emptyAmount', emptyAmount);\ncontext.set('discardAmount', discardAmount);\n\ncontext.set('fullBefore', fullBefore);\ncontext.set('halfBefore', halfBefore);\ncontext.set('emptyBefore', emptyBefore);\n\ncontext.set('fullToFull', fullToFull);\ncontext.set('fullToHalf', fullToHalf);\ncontext.set('fullToEmpty', fullToEmpty);\ncontext.set('fullToDiscard', fullToDiscard);\n\ncontext.set('halfToFull', halfToFull);\ncontext.set('halfToHalf', halfToHalf);\ncontext.set('halfToEmpty', halfToEmpty);\ncontext.set('halfToDiscard', halfToDiscard);\n\ncontext.set('emptyToFull', emptyToFull);\ncontext.set('emptyToHalf', emptyToHalf);\ncontext.set('emptyToEmpty', emptyToEmpty);\ncontext.set('emptyToDiscard', emptyToDiscard);\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\", \"Discard\"];\nm.data = [[fullAmount, halfAmount, emptyAmount, discardAmount]];\nm.series = [\"classes\"];\n\nvar n = {};\nn.labels = [\"full\", \"half\", \"Empty\"];\nn.data = [[fullBefore, halfBefore, emptyBefore]];\nn.series = [\"classes\"];\n\nvar o = {};\no.labels = [\"full\", \"half\", \"Empty\"];\no.data = [\n    [fullToFull, halfToFull, emptyToFull],\n    [fullToHalf, halfToHalf, emptyToHalf],\n    [fullToEmpty, halfToEmpty, emptyToEmpty],\n    [fullToDiscard, halfToDiscard, emptyToDiscard]\n];\no.series = [\"full\", \"half\", \"empty\", \"Discard\"];\n\n\nreturn [{payload:[m],topic:msg.topic},{payload:[n],topic:msg.topic},{payload:[o],topic:msg.topic}];",
+        "name": "stats certain",
+        "func": "if (msg.topic == \"reset\")\n{\n    context.set('fullAmount', 0);\ncontext.set('halfAmount', 0);\ncontext.set('emptyAmount', 0);\n\ncontext.set('fullBefore', 0);\ncontext.set('halfBefore', 0);\ncontext.set('emptyBefore', 0);\n\ncontext.set('fullToFull', 0);\ncontext.set('fullToHalf', 0);\ncontext.set('fullToEmpty', 0);\ncontext.set('fullToDiscard',0);\n\ncontext.set('halfToFull', 0);\ncontext.set('halfToHalf', 0);\ncontext.set('halfToEmpty', 0);\ncontext.set('halfToDiscard', 0);\n\ncontext.set('emptyToFull', 0);\ncontext.set('emptyToHalf', 0);\ncontext.set('emptyToEmpty', 0);\ncontext.set('emptyToDiscard', 0);\nreturn;\n}\n\nvar fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\nvar discardAmount = context.get('discardAmount') || 0;\n\nvar fullBefore = context.get('fullBefore') || 0;\nvar halfBefore = context.get('halfBefore') || 0;\nvar emptyBefore = context.get('emptyBefore') || 0;\n\nvar fullToFull = context.get('fullToFull') || 0;\nvar fullToHalf = context.get('fullToHalf') || 0;\nvar fullToEmpty = context.get('fullToEmpty') || 0;\nvar fullToDiscard = context.get('fullToDiscard') || 0;\n\nvar halfToFull = context.get('halfToFull') || 0;\nvar halfToHalf = context.get('halfToHalf') || 0;\nvar halfToEmpty = context.get('halfToEmpty') || 0;\nvar halfToDiscard = context.get('halfToDiscard') || 0;\n\nvar emptyToFull = context.get('emptyToFull') || 0;\nvar emptyToHalf = context.get('emptyToHalf') || 0;\nvar emptyToEmpty = context.get('emptyToEmpty') || 0;\nvar emptyToDiscard = context.get('emptyToDiscard') || 0;\n\nvar newClass = flow.get('newClass');\nvar oldClass = flow.get('class');\n\n\nswitch(oldClass) {\n  case \"Full\":\n    fullBefore ++;\n        switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                fullToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                fullToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                fullToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                fullToDiscard ++;\n            break;\n        }\n    break;\n  case \"Half\":\n    halfBefore++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                halfToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                halfToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                halfToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                halfToDiscard ++;\n            break;\n        }\n    break;\n  case \"Empty\":\n    emptyBefore ++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                emptyToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                emptyToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                emptyToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                emptyToDiscard ++;\n            break;\n        }\n    break;\n}\n\nif (msg.topic == \"reset\")\n{\n    fullAmount = 0;\n halfAmount = 0;\n  emptyAmount = 0;\n}\n\ncontext.set('fullAmount', fullAmount);\ncontext.set('halfAmount', halfAmount);\ncontext.set('emptyAmount', emptyAmount);\ncontext.set('discardAmount', discardAmount);\n\ncontext.set('fullBefore', fullBefore);\ncontext.set('halfBefore', halfBefore);\ncontext.set('emptyBefore', emptyBefore);\n\ncontext.set('fullToFull', fullToFull);\ncontext.set('fullToHalf', fullToHalf);\ncontext.set('fullToEmpty', fullToEmpty);\ncontext.set('fullToDiscard', fullToDiscard);\n\ncontext.set('halfToFull', halfToFull);\ncontext.set('halfToHalf', halfToHalf);\ncontext.set('halfToEmpty', halfToEmpty);\ncontext.set('halfToDiscard', halfToDiscard);\n\ncontext.set('emptyToFull', emptyToFull);\ncontext.set('emptyToHalf', emptyToHalf);\ncontext.set('emptyToEmpty', emptyToEmpty);\ncontext.set('emptyToDiscard', emptyToDiscard);\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\", \"Discard\"];\nm.data = [[fullAmount, halfAmount, emptyAmount, discardAmount]];\nm.series = [\"classes\"];\n\nvar n = {};\nn.labels = [\"full\", \"half\", \"Empty\"];\nn.data = [[fullBefore, halfBefore, emptyBefore]];\nn.series = [\"classes\"];\n\nvar o = {};\no.labels = [\"full\", \"half\", \"Empty\"];\no.data = [\n    [fullToFull, halfToFull, emptyToFull],\n    [fullToHalf, halfToHalf, emptyToHalf],\n    [fullToEmpty, halfToEmpty, emptyToEmpty],\n    [fullToDiscard, halfToDiscard, emptyToDiscard]\n];\no.series = [\"full\", \"half\", \"empty\", \"Discard\"];\n\n\nreturn [{payload:[m],topic:msg.topic},{payload:[n],topic:msg.topic},{payload:[o],topic:msg.topic}];",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 410,
         "y": 640,
         "wires": [
             [
@@ -2129,7 +2122,7 @@
         "type": "ui_text",
         "z": "a1d770f327e26cc6",
         "group": "bc6726098f838573",
-        "order": 3,
+        "order": 5,
         "width": 0,
         "height": 0,
         "name": "",
@@ -2150,11 +2143,11 @@
         "type": "ui_text",
         "z": "a1d770f327e26cc6",
         "group": "bc6726098f838573",
-        "order": 5,
+        "order": 7,
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "time:",
+        "label": "filename:",
         "format": "{{msg.date}} {{msg.time}}",
         "layout": "row-spread",
         "className": "",
@@ -2162,7 +2155,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 710,
+        "x": 720,
         "y": 380,
         "wires": []
     },
@@ -2172,7 +2165,315 @@
         "z": "a1d770f327e26cc6",
         "name": "",
         "group": "9a910f9c1c3253f4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "new Classification certain",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86985eede344b297",
+        "type": "ui_text_input",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "bc6726098f838573",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "4b7439c7cd25c7f9",
+                "d5c6b97423c70247",
+                "4a1e99edd903cbb1"
+            ]
+        ]
+    },
+    {
+        "id": "de4da2aefc4112db",
+        "type": "ui_button",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "9a910f9c1c3253f4",
         "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "reset",
+        "topicType": "str",
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "1af5c43e87bdbf24",
+                "57cc0caf0cc89784"
+            ]
+        ]
+    },
+    {
+        "id": "d14a8178573f8858",
+        "type": "ui_chart",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "9a910f9c1c3253f4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "old Classification certain",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72cf30b3aab6d4f2",
+        "type": "ui_chart",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "9a910f9c1c3253f4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "reclassification certain",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 600,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "599e8f160a299f7f",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "timestamp",
+        "func": "var str = flow.get('filename');\nstr = str.slice(1);\n\nstr = str.substring(0, str.length - 4);\n\nvar datestring = str;\n//node.status({fill:\"red\",shape:\"ring\",text:datestring});\nvar year = datestring.slice(0,2);\nyear = \"20\" + year;\nvar month = datestring.slice(2,4);\nvar day = datestring.slice(4,6);\nvar hour = datestring.slice(6,8);\nvar min = datestring.slice(8,10);\nmsg.datetimestamp = year + \"-\" + month + \"-\" + day + \" \" +hour + \":\" + min\n\nflow.set ('dateTime', msg.datetimestamp);\n//msg.filename = \"P\" + largest + \".jpg\"; \n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 520,
+        "wires": [
+            [
+                "26145c86b510b5d5",
+                "8791d3077de01673"
+            ]
+        ]
+    },
+    {
+        "id": "882c21d63da94d13",
+        "type": "ui_dropdown",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "label": "certainty",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "bc6726098f838573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Certain",
+                "value": "\\",
+                "type": "str"
+            },
+            {
+                "label": "Uncertain",
+                "value": "\\Uncertain\\",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "4134291be0c76f91"
+            ]
+        ]
+    },
+    {
+        "id": "4134291be0c76f91",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "certainty",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "certainty",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "8e2456680eb563da"
+            ]
+        ]
+    },
+    {
+        "id": "57cc0caf0cc89784",
+        "type": "function",
+        "z": "a1d770f327e26cc6",
+        "name": "stats uncertain",
+        "func": "if (msg.topic == \"reset\")\n{\n    context.set('fullAmount', 0);\ncontext.set('halfAmount', 0);\ncontext.set('emptyAmount', 0);\n}\n\nvar fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\nvar discardAmount = context.get('discardAmount') || 0;\n\nvar fullBefore = context.get('fullBefore') || 0;\nvar halfBefore = context.get('halfBefore') || 0;\nvar emptyBefore = context.get('emptyBefore') || 0;\n\nvar fullToFull = context.get('fullToFull') || 0;\nvar fullToHalf = context.get('fullToHalf') || 0;\nvar fullToEmpty = context.get('fullToEmpty') || 0;\nvar fullToDiscard = context.get('fullToDiscard') || 0;\n\nvar halfToFull = context.get('halfToFull') || 0;\nvar halfToHalf = context.get('halfToHalf') || 0;\nvar halfToEmpty = context.get('halfToEmpty') || 0;\nvar halfToDiscard = context.get('halfToDiscard') || 0;\n\nvar emptyToFull = context.get('emptyToFull') || 0;\nvar emptyToHalf = context.get('emptyToHalf') || 0;\nvar emptyToEmpty = context.get('emptyToEmpty') || 0;\nvar emptyToDiscard = context.get('emptyToDiscard') || 0;\n\nvar newClass = flow.get('newClass');\nvar oldClass = flow.get('class');\n\n\nswitch(oldClass) {\n  case \"Full\":\n    fullBefore ++;\n        switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                fullToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                fullToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                fullToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                fullToDiscard ++;\n            break;\n        }\n    break;\n  case \"Half\":\n    halfBefore++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                halfToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                halfToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                halfToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                halfToDiscard ++;\n            break;\n        }\n    break;\n  case \"Empty\":\n    emptyBefore ++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                emptyToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                emptyToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                emptyToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                emptyToDiscard ++;\n            break;\n        }\n    break;\n}\n\nif (msg.topic == \"reset\")\n{\n    fullAmount = 0;\n halfAmount = 0;\n  emptyAmount = 0;\n}\n\ncontext.set('fullAmount', fullAmount);\ncontext.set('halfAmount', halfAmount);\ncontext.set('emptyAmount', emptyAmount);\ncontext.set('discardAmount', discardAmount);\n\ncontext.set('fullBefore', fullBefore);\ncontext.set('halfBefore', halfBefore);\ncontext.set('emptyBefore', emptyBefore);\n\ncontext.set('fullToFull', fullToFull);\ncontext.set('fullToHalf', fullToHalf);\ncontext.set('fullToEmpty', fullToEmpty);\ncontext.set('fullToDiscard', fullToDiscard);\n\ncontext.set('halfToFull', halfToFull);\ncontext.set('halfToHalf', halfToHalf);\ncontext.set('halfToEmpty', halfToEmpty);\ncontext.set('halfToDiscard', halfToDiscard);\n\ncontext.set('emptyToFull', emptyToFull);\ncontext.set('emptyToHalf', emptyToHalf);\ncontext.set('emptyToEmpty', emptyToEmpty);\ncontext.set('emptyToDiscard', emptyToDiscard);\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\", \"Discard\"];\nm.data = [[fullAmount, halfAmount, emptyAmount, discardAmount]];\nm.series = [\"classes\"];\n\nvar n = {};\nn.labels = [\"full\", \"half\", \"Empty\"];\nn.data = [[fullBefore, halfBefore, emptyBefore]];\nn.series = [\"classes\"];\n\nvar o = {};\no.labels = [\"full\", \"half\", \"Empty\"];\no.data = [\n    [fullToFull, halfToFull, emptyToFull],\n    [fullToHalf, halfToHalf, emptyToHalf],\n    [fullToEmpty, halfToEmpty, emptyToEmpty],\n    [fullToDiscard, halfToDiscard, emptyToDiscard]\n];\no.series = [\"full\", \"half\", \"empty\", \"Discard\"];\n\n\nreturn [{payload:[m],topic:msg.topic},{payload:[n],topic:msg.topic},{payload:[o],topic:msg.topic}];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 800,
+        "wires": [
+            [
+                "1958a62f44e1167c"
+            ],
+            [
+                "7e654d9c7d8b378a"
+            ],
+            [
+                "6754c6b22aa62d63"
+            ]
+        ]
+    },
+    {
+        "id": "1958a62f44e1167c",
+        "type": "ui_chart",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "group": "9a910f9c1c3253f4",
+        "order": 4,
         "width": 0,
         "height": 0,
         "label": "new Classification",
@@ -2204,74 +2505,19 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
-        "y": 600,
+        "x": 670,
+        "y": 760,
         "wires": [
             []
         ]
     },
     {
-        "id": "86985eede344b297",
-        "type": "ui_text_input",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "label": "",
-        "tooltip": "",
-        "group": "bc6726098f838573",
-        "order": 8,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": 300,
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 160,
-        "y": 200,
-        "wires": [
-            [
-                "4b7439c7cd25c7f9",
-                "d5c6b97423c70247"
-            ]
-        ]
-    },
-    {
-        "id": "de4da2aefc4112db",
-        "type": "ui_button",
-        "z": "a1d770f327e26cc6",
-        "name": "",
-        "group": "9a910f9c1c3253f4",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Reset",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "reset",
-        "topicType": "str",
-        "x": 170,
-        "y": 640,
-        "wires": [
-            [
-                "1af5c43e87bdbf24"
-            ]
-        ]
-    },
-    {
-        "id": "d14a8178573f8858",
+        "id": "7e654d9c7d8b378a",
         "type": "ui_chart",
         "z": "a1d770f327e26cc6",
         "name": "",
         "group": "9a910f9c1c3253f4",
-        "order": 7,
+        "order": 5,
         "width": 0,
         "height": 0,
         "label": "old Classification",
@@ -2303,19 +2549,19 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
-        "y": 640,
+        "x": 670,
+        "y": 800,
         "wires": [
             []
         ]
     },
     {
-        "id": "72cf30b3aab6d4f2",
+        "id": "6754c6b22aa62d63",
         "type": "ui_chart",
         "z": "a1d770f327e26cc6",
         "name": "",
         "group": "9a910f9c1c3253f4",
-        "order": 7,
+        "order": 6,
         "width": 0,
         "height": 0,
         "label": "reclassification",
@@ -2347,11 +2593,92 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 580,
-        "y": 680,
+        "x": 660,
+        "y": 840,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "8f6d4757568fc3a9",
+        "type": "switch",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "property": "certainty",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Certain",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Uncertain",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "1af5c43e87bdbf24"
+            ],
+            [
+                "57cc0caf0cc89784"
+            ]
+        ]
+    },
+    {
+        "id": "4a1e99edd903cbb1",
+        "type": "change",
+        "z": "a1d770f327e26cc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\\",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 300,
+        "wires": [
+            [
+                "882c21d63da94d13"
+            ]
+        ]
+    },
+    {
+        "id": "26145c86b510b5d5",
+        "type": "ui_text",
+        "z": "a1d770f327e26cc6",
+        "group": "bc6726098f838573",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "date:",
+        "format": "{{msg.datetimestamp}} ",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 750,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "bb7d4b0.4eee0b8",
@@ -4511,6 +4838,2800 @@
         "reg": false,
         "x": 1050,
         "y": 2020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "668879ee1d73106c",
+        "type": "ftp in",
+        "z": "48b189d0ce4ed8ae",
+        "ftp": "f69079dc874018d4",
+        "operation": "list",
+        "filename": "",
+        "localFilename": "",
+        "name": "list ftp",
+        "x": 490,
+        "y": 60,
+        "wires": [
+            [
+                "d0e1281366b93ab4"
+            ]
+        ]
+    },
+    {
+        "id": "28abbd31731a8379",
+        "type": "debug",
+        "z": "48b189d0ce4ed8ae",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "69c3564906a6c22a",
+        "type": "inject",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "props": [
+            {
+                "p": "filename",
+                "v": "/CatchCam/",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "668879ee1d73106c"
+            ]
+        ]
+    },
+    {
+        "id": "d0e1281366b93ab4",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "load folders",
+        "func": "var list = msg.payload;\n\ncontext.set ('list',list);\nvar newmsg = {};\nvar a = [] ;\nvar num = 0;\n\nfor (var key in list){\n   if(list[key].type == \"d\") \n   {\n       \n       if (list[key].name.includes('CAM') )\n       {\n            num ++;\n         \n            var b = {[list[key].name] : list[key].name};\n            a.push(b);\n       }\n      \n   }\n    \n    }\n// c = {\"manual\" : 10}\n//a.push(c);\n\n//flow.set('presets', list);\n//global.set('locSettings', list);\nnewmsg.options = a;\nflow.set ('folders',a);\nmsg.payload = list;\nreturn newmsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 60,
+        "wires": [
+            [
+                "1d3ea474ba3bd4b3"
+            ]
+        ]
+    },
+    {
+        "id": "f4f7259069d0e813",
+        "type": "ui_button",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Load Folders",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "668879ee1d73106c"
+            ]
+        ]
+    },
+    {
+        "id": "1d3ea474ba3bd4b3",
+        "type": "ui_dropdown",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "label": "Folders",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d2cfead90bb477f0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 800,
+        "y": 60,
+        "wires": [
+            [
+                "1e6e08f9aace7040"
+            ]
+        ]
+    },
+    {
+        "id": "c24f44bdcda4bb5d",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "folder",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e6e08f9aace7040",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "set folder path",
+        "func": "flow.set('FTP_folder', \"/CatchCam/\" + msg.payload + \"/\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 60,
+        "wires": [
+            [
+                "c24f44bdcda4bb5d"
+            ]
+        ]
+    },
+    {
+        "id": "433eef14cd228716",
+        "type": "inject",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "path",
+        "payload": "C:\\Users\\LouisLeDucTheGreatBu\\TGBB Dropbox\\TGBB RnD\\MM-Monitor and Measure\\MM002 Catchment Monitoring\\Image recognition\\Training images\\Amsterdam V2\\",
+        "payloadType": "str",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "30583ddad049076e"
+            ]
+        ]
+    },
+    {
+        "id": "520ec4d592276d88",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "local path load",
+        "func": "if (msg.topic == \"path\")\n{\n    context.set('path',msg.payload);\n}\n\nif (msg.topic == \"category\")\n{\n    context.set('category',msg.payload);\n}\nvar category = context.get('category');\nvar path = flow.get('path');\nflow.set('currentPath', path + \"uncertain\\\\\" + category)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "784331124c89bf16"
+            ]
+        ]
+    },
+    {
+        "id": "58c3c48081d3fbd1",
+        "type": "ui_dropdown",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "label": "class",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d2cfead90bb477f0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "Full",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Half",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Empty",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "2f310998851ebdd3"
+            ]
+        ]
+    },
+    {
+        "id": "784331124c89bf16",
+        "type": "ui_button",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Load Local Files ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "80eae6f4ad03a44e"
+            ]
+        ]
+    },
+    {
+        "id": "80eae6f4ad03a44e",
+        "type": "olfnf-folder-listing",
+        "z": "48b189d0ce4ed8ae",
+        "folder": "currentPath",
+        "folder_type": "flow",
+        "subfolder": false,
+        "filter": "files",
+        "ignoreempty": true,
+        "masks": "*.*",
+        "masksregex": false,
+        "name": "",
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "2aae5ad227f58b4a",
+                "28abbd31731a8379"
+            ]
+        ]
+    },
+    {
+        "id": "2f310998851ebdd3",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "category",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "520ec4d592276d88"
+            ]
+        ]
+    },
+    {
+        "id": "8695b8980dcf7036",
+        "type": "jimp-image",
+        "z": "48b189d0ce4ed8ae",
+        "name": "base64",
+        "data": "file",
+        "dataType": "flow",
+        "ret": "b64",
+        "parameter1": "FONT_SANS_128_WHITE",
+        "parameter1Type": "jimpFont",
+        "parameter2": "0",
+        "parameter2Type": "num",
+        "parameter3": "0",
+        "parameter3Type": "num",
+        "parameter4": "payload[0].class",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "none",
+        "parameter6": "",
+        "parameter6Type": "none",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "image",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "5bb36113a92ed656"
+            ]
+        ]
+    },
+    {
+        "id": "5bb36113a92ed656",
+        "type": "template",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{image}}}\">",
+        "output": "str",
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "31476828fb189464"
+            ]
+        ]
+    },
+    {
+        "id": "31476828fb189464",
+        "type": "ui_template",
+        "z": "48b189d0ce4ed8ae",
+        "group": "d2cfead90bb477f0",
+        "name": "frame picture",
+        "order": 8,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1050,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c50bc13328e5474f",
+        "type": "ui_dropdown",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "label": "actual class",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d2cfead90bb477f0",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "Full",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Half",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Empty",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "Discard",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 930,
+        "y": 520,
+        "wires": [
+            [
+                "9901846795cba663",
+                "2bf45999b0ade993"
+            ]
+        ]
+    },
+    {
+        "id": "9901846795cba663",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "local path move",
+        "func": "context.set('category',msg.payload);\n\nvar path = flow.get('path');\nflow.set('destinationPath', path + \"Sorted\\\\\" + msg.payload + \"\\\\\" + flow.get(\"filename\"));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f44d70b0da32d373",
+        "type": "ui_button",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Save",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "39ceb49d184abea4",
+                "a6e5e9853c323c18"
+            ]
+        ]
+    },
+    {
+        "id": "feb56e89f8472c18",
+        "type": "olfnf-file-operations",
+        "z": "48b189d0ce4ed8ae",
+        "operation": "move",
+        "source_file": "file",
+        "source_file_type": "flow",
+        "target_file": "destinationPath",
+        "target_file_type": "flow",
+        "create_directory": true,
+        "name": "",
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "784331124c89bf16"
+            ]
+        ]
+    },
+    {
+        "id": "2bf45999b0ade993",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "newClass",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30583ddad049076e",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "logfile",
+        "func": "flow.set('logPath', msg.payload + \"\\\\catchLog.csv\")\n\nmsg.filename = msg.payload + \"\\\\catchLog.csv\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2aae5ad227f58b4a",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "file data",
+        "func": "\n\n\nmsg.amount = msg.payload.length;\n\nif (msg.amount == 0)\n{\nmsg.time = \"\";\nmsg.date = \"\";\nmsg.enabled = false;\nreturn msg;\n}\n\n\n\nvar arr = msg.payload[0].split(\"\\\\\");\n\nvar filename = arr[arr.length - 1];\n\nflow.set('filename', filename);\nflow.set('file', msg.payload[0]);\n\nvar str = filename;\nstr = str.substring(0, str.length - 4);\nmsg.time = filename; //Number(str.slice(7));\n//msg.date = Number(str.slice(1));\nmsg.enabled = true;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "8695b8980dcf7036",
+                "58d4f8d8db16628a",
+                "f2b485890249d698",
+                "49e46d83aabd2c96",
+                "f44d70b0da32d373"
+            ]
+        ]
+    },
+    {
+        "id": "7fdd56d3d77b5d54",
+        "type": "template",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{flow.filename}};{{flow.class}};{{flow.newClass}}",
+        "output": "str",
+        "x": 760,
+        "y": 600,
+        "wires": [
+            [
+                "563931b0d4f48d20"
+            ]
+        ]
+    },
+    {
+        "id": "563931b0d4f48d20",
+        "type": "file",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 900,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39ceb49d184abea4",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "logPath",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 600,
+        "wires": [
+            [
+                "feb56e89f8472c18",
+                "3fc56b373f90d824"
+            ]
+        ]
+    },
+    {
+        "id": "58d4f8d8db16628a",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 520,
+        "wires": [
+            [
+                "c50bc13328e5474f"
+            ]
+        ]
+    },
+    {
+        "id": "a6e5e9853c323c18",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "stats",
+        "func": "if (msg.topic == \"reset\")\n{\n    context.set('fullAmount', 0);\ncontext.set('halfAmount', 0);\ncontext.set('emptyAmount', 0);\n}\n\nvar fullAmount = context.get('fullAmount') || 0;\nvar halfAmount = context.get('halfAmount') || 0;\nvar emptyAmount = context.get('emptyAmount') || 0;\nvar discardAmount = context.get('discardAmount') || 0;\n\nvar fullBefore = context.get('fullBefore') || 0;\nvar halfBefore = context.get('halfBefore') || 0;\nvar emptyBefore = context.get('emptyBefore') || 0;\n\nvar fullToFull = context.get('fullToFull') || 0;\nvar fullToHalf = context.get('fullToHalf') || 0;\nvar fullToEmpty = context.get('fullToEmpty') || 0;\nvar fullToDiscard = context.get('fullToDiscard') || 0;\n\nvar halfToFull = context.get('halfToFull') || 0;\nvar halfToHalf = context.get('halfToHalf') || 0;\nvar halfToEmpty = context.get('halfToEmpty') || 0;\nvar halfToDiscard = context.get('halfToDiscard') || 0;\n\nvar emptyToFull = context.get('emptyToFull') || 0;\nvar emptyToHalf = context.get('emptyToHalf') || 0;\nvar emptyToEmpty = context.get('emptyToEmpty') || 0;\nvar emptyToDiscard = context.get('emptyToDiscard') || 0;\n\nvar newClass = flow.get('newClass');\nvar oldClass = flow.get('class');\n\n\nswitch(oldClass) {\n  case \"Full\":\n    fullBefore ++;\n        switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                fullToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                fullToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                fullToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                fullToDiscard ++;\n            break;\n        }\n    break;\n  case \"Half\":\n    halfBefore++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                halfToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                halfToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                halfToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                halfToDiscard ++;\n            break;\n        }\n    break;\n  case \"Empty\":\n    emptyBefore ++;\n    switch(newClass) {\n            case \"Full\":\n                fullAmount ++;\n                emptyToFull ++;\n            break;\n            case \"Half\":\n                halfAmount++;\n                emptyToHalf ++;\n            break;\n            case \"Empty\":\n                emptyAmount ++;\n                emptyToEmpty ++;\n            break;\n            case \"Discard\":\n                discardAmount ++;\n                emptyToDiscard ++;\n            break;\n        }\n    break;\n}\n\nif (msg.topic == \"reset\")\n{\n    fullAmount = 0;\n halfAmount = 0;\n  emptyAmount = 0;\n}\n\ncontext.set('fullAmount', fullAmount);\ncontext.set('halfAmount', halfAmount);\ncontext.set('emptyAmount', emptyAmount);\ncontext.set('discardAmount', discardAmount);\n\ncontext.set('fullBefore', fullBefore);\ncontext.set('halfBefore', halfBefore);\ncontext.set('emptyBefore', emptyBefore);\n\ncontext.set('fullToFull', fullToFull);\ncontext.set('fullToHalf', fullToHalf);\ncontext.set('fullToEmpty', fullToEmpty);\ncontext.set('fullToDiscard', fullToDiscard);\n\ncontext.set('halfToFull', halfToFull);\ncontext.set('halfToHalf', halfToHalf);\ncontext.set('halfToEmpty', halfToEmpty);\ncontext.set('halfToDiscard', halfToDiscard);\n\ncontext.set('emptyToFull', emptyToFull);\ncontext.set('emptyToHalf', emptyToHalf);\ncontext.set('emptyToEmpty', emptyToEmpty);\ncontext.set('emptyToDiscard', emptyToDiscard);\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\", \"Discard\"];\nm.data = [[fullAmount, halfAmount, emptyAmount, discardAmount]];\nm.series = [\"classes\"];\n\nvar n = {};\nn.labels = [\"full\", \"half\", \"Empty\"];\nn.data = [[fullBefore, halfBefore, emptyBefore]];\nn.series = [\"classes\"];\n\nvar o = {};\no.labels = [\"full\", \"half\", \"Empty\"];\no.data = [\n    [fullToFull, halfToFull, emptyToFull],\n    [fullToHalf, halfToHalf, emptyToHalf],\n    [fullToEmpty, halfToEmpty, emptyToEmpty],\n    [fullToDiscard, halfToDiscard, emptyToDiscard]\n];\no.series = [\"full\", \"half\", \"empty\", \"Discard\"];\n\n\nreturn [{payload:[m],topic:msg.topic},{payload:[n],topic:msg.topic},{payload:[o],topic:msg.topic}];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 680,
+        "wires": [
+            [
+                "f8552051e11dffa3"
+            ],
+            [
+                "f4c245cccd21a7ba"
+            ],
+            [
+                "f90d3e90166fbf4e"
+            ]
+        ]
+    },
+    {
+        "id": "f2b485890249d698",
+        "type": "ui_text",
+        "z": "48b189d0ce4ed8ae",
+        "group": "d2cfead90bb477f0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "images: ",
+        "format": "{{msg.amount}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 720,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "49e46d83aabd2c96",
+        "type": "ui_text",
+        "z": "48b189d0ce4ed8ae",
+        "group": "d2cfead90bb477f0",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "time:",
+        "format": "{{msg.date}} {{msg.time}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 710,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f8552051e11dffa3",
+        "type": "ui_chart",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "new Classification",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f245494afb0d93ec",
+        "type": "ui_text_input",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "label": "local folder",
+        "tooltip": "",
+        "group": "d2cfead90bb477f0",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "30583ddad049076e"
+            ]
+        ]
+    },
+    {
+        "id": "29cc9581742a5d4c",
+        "type": "ui_button",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "reset",
+        "topicType": "str",
+        "x": 170,
+        "y": 680,
+        "wires": [
+            [
+                "a6e5e9853c323c18"
+            ]
+        ]
+    },
+    {
+        "id": "f4c245cccd21a7ba",
+        "type": "ui_chart",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "label": "old Classification",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f90d3e90166fbf4e",
+        "type": "ui_chart",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "label": "reclassification",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3fc56b373f90d824",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "timestamp",
+        "func": "var str = msg.filename;\nstr = str.slice(1);\n\nstr = str.substring(0, str.length - 4);\n\nvar datestring = str;\n//node.status({fill:\"red\",shape:\"ring\",text:datestring});\nvar year = datestring.slice(0,2);\nyear = \"20\" + year;\nvar month = datestring.slice(2,4);\nvar day = datestring.slice(4,6);\nvar hour = datestring.slice(6,8);\nvar min = datestring.slice(8,10);\nmsg.datetimestamp = day + \"-\" + month + \"-\" + year + \" \" +hour + \":\" + min\n\n\n//msg.filename = \"P\" + largest + \".jpg\"; \n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 600,
+        "wires": [
+            [
+                "7fdd56d3d77b5d54"
+            ]
+        ]
+    },
+    {
+        "id": "2d1429a7680a22c7",
+        "type": "comment",
+        "z": "48b189d0ce4ed8ae",
+        "name": "improvements",
+        "info": "load catchlog.CSV\nget picture from FTP\ncorrect class\nstats",
+        "x": 1170,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "80efd8761c719015",
+        "type": "ftp in",
+        "z": "48b189d0ce4ed8ae",
+        "ftp": "f69079dc874018d4",
+        "operation": "get",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "356f32b249e0fc2b",
+        "type": "file in",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "979607b1e129aeaf"
+            ]
+        ]
+    },
+    {
+        "id": "979607b1e129aeaf",
+        "type": "csv",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "c304e9314bf13a8c"
+            ]
+        ]
+    },
+    {
+        "id": "c304e9314bf13a8c",
+        "type": "change",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "catchLog",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "898dd5da04b1b3ac"
+            ]
+        ]
+    },
+    {
+        "id": "898dd5da04b1b3ac",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "FTP path load",
+        "func": "var files = flow.get('CatchLog');\n\nvar file = files[0];\n\nfiles.shift();\nnode.status({fill:\"red\",shape:\"ring\",text:file});\n\nvar category = flow.get('category');\nvar path = flow.get('FTP_folder') + \"folderstructure\";\n\nmsg.filename = path +\"/\" +msg.filename;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "80efd8761c719015"
+            ]
+        ]
+    },
+    {
+        "id": "fdcae87bd9f7ab10",
+        "type": "ui_button",
+        "z": "48b189d0ce4ed8ae",
+        "name": "",
+        "group": "d2cfead90bb477f0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Load CSV",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "2215d6a1ea0abe96"
+            ]
+        ]
+    },
+    {
+        "id": "2215d6a1ea0abe96",
+        "type": "function",
+        "z": "48b189d0ce4ed8ae",
+        "name": "logfile",
+        "func": "logPath = flow.get('logPath');\n\nmsg.filename = logPath;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "356f32b249e0fc2b"
+            ]
+        ]
+    },
+    {
+        "id": "bf02793c923b4186",
+        "type": "ui_button",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "df295bdf341460da",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Reload",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [
+                "7519d37f263e8da4"
+            ]
+        ]
+    },
+    {
+        "id": "a8970066be4b9eda",
+        "type": "ui_dropdown",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "df295bdf341460da",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "b431d077c42115f4"
+            ]
+        ]
+    },
+    {
+        "id": "644e2ffcf4e53e2a",
+        "type": "ui_dropdown",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "df295bdf341460da",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "9753df3f022d10b1"
+            ]
+        ]
+    },
+    {
+        "id": "12ebba6d3a78cf4b",
+        "type": "ui_dropdown",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "df295bdf341460da",
+        "order": 3,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 420,
+        "y": 780,
+        "wires": [
+            [
+                "4bdef651399e21d8"
+            ]
+        ]
+    },
+    {
+        "id": "16c0d36af83593d4",
+        "type": "ui_dropdown",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "df295bdf341460da",
+        "order": 4,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 420,
+        "y": 1000,
+        "wires": [
+            [
+                "83736acb8e6b4631"
+            ]
+        ]
+    },
+    {
+        "id": "457b7e611b5241c7",
+        "type": "link in",
+        "z": "7657c2001fc91fb1",
+        "name": "locations",
+        "links": [],
+        "x": 225,
+        "y": 560,
+        "wires": [
+            [
+                "a8970066be4b9eda",
+                "644e2ffcf4e53e2a",
+                "12ebba6d3a78cf4b",
+                "16c0d36af83593d4"
+            ]
+        ]
+    },
+    {
+        "id": "83736acb8e6b4631",
+        "type": "change",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frame4",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1000,
+        "wires": [
+            [
+                "e80e79954f0b8ebb"
+            ]
+        ]
+    },
+    {
+        "id": "b431d077c42115f4",
+        "type": "change",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frame1",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "a7259d8374593284"
+            ]
+        ]
+    },
+    {
+        "id": "9753df3f022d10b1",
+        "type": "change",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frame2",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "83e146e9cbd4648d"
+            ]
+        ]
+    },
+    {
+        "id": "4bdef651399e21d8",
+        "type": "change",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frame3",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 780,
+        "wires": [
+            [
+                "bfb525d0acede588"
+            ]
+        ]
+    },
+    {
+        "id": "4d3e01bfb33d6de6",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "117855cb9e91df90",
+        "name": "frame 1 last",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1170,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ade5b7cae0f9b05a",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastimage.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 360,
+        "wires": [
+            [
+                "4d3e01bfb33d6de6"
+            ]
+        ]
+    },
+    {
+        "id": "a7259d8374593284",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "load frame 1",
+        "func": "var name = flow.get('frame1');\nmsg.name = name;\nvar location = flow.get('locations.' + name);\n//Object.assign({}, );\n\n\nmsg.lastDate = location.lastimage.year + '-' +\nlocation.lastimage.month + '-' +\nlocation.lastimage.day + ' ' +\nlocation.lastimage.hour + ':' +\nlocation.lastimage.min;\n\nvar percentScore = Number(location.lastimage.score).toFixed(2);\n//percentScore = Number(percentScore);\npercentScore = Number(percentScore) *100;\n//location.lastimage.score = percentScore;\n\n\n\nnode.status({fill:\"red\",shape:\"ring\",text:name + \" \" + percentScore + \" \" + percentScoreFull});\n\nmsg.percentScore = percentScore;\n\nmsg.payload = location;\n\nif (!location.lastfull)\n {\n   msg.lastFullDate = \"N/A\"\n    return msg;\n}\n\nmsg.lastFullDate = location.lastfull.year + '-' +\nlocation.lastfull.month + '-' +\nlocation.lastfull.day + ' ' +\nlocation.lastfull.hour + ':' +\nlocation.lastfull.min;\n\nvar percentScoreFull = 0 + location.lastfull.score;\npercentScoreFull = Number(percentScoreFull).toFixed(2);\npercentScoreFull = percentScoreFull * 100;\n//location.lastfull.score = percentScoreFull;\nmsg.percentScoreFull =percentScoreFull;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "ade5b7cae0f9b05a",
+                "3381822aa4207197",
+                "1a59f05975f03e01",
+                "e8224944b6e1cc6e",
+                "f6d0151181edec41"
+            ]
+        ]
+    },
+    {
+        "id": "c4e0850982f3ab6a",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "117855cb9e91df90",
+        "name": "frame 1 lastfull",
+        "order": 8,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3381822aa4207197",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastfull.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 480,
+        "wires": [
+            [
+                "c4e0850982f3ab6a"
+            ]
+        ]
+    },
+    {
+        "id": "1a59f05975f03e01",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "117855cb9e91df90",
+        "order": 6,
+        "width": "7",
+        "height": "1",
+        "name": "lastfull",
+        "label": "Last Full: {{msg.lastFullDate}}",
+        "format": "{{msg.percentScoreFull}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "e8224944b6e1cc6e",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "117855cb9e91df90",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Location",
+        "label": "{{msg.payload.name}} {{msg.payload.lastimage.date}}",
+        "format": "{{msg.payload.lastimage.class}} {{msg.percentScore}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 980,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6282edab221b8e83",
+        "type": "mqtt in",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "topic": "locations",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1225e804c4caaa94",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "c9948f8077170f49"
+            ]
+        ]
+    },
+    {
+        "id": "c9948f8077170f49",
+        "type": "change",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "locations",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "8f20060bf31fc26c"
+            ]
+        ]
+    },
+    {
+        "id": "5095c95b7e5fb9d8",
+        "type": "mqtt out",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "topic": "request",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1225e804c4caaa94",
+        "x": 300,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4968c6150cc61f62",
+        "type": "ui_button",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "df295bdf341460da",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Download",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "5095c95b7e5fb9d8"
+            ]
+        ]
+    },
+    {
+        "id": "8f20060bf31fc26c",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "load locations",
+        "func": "var prevlist = context.get('list');\nvar list = flow.get('locations');\n//if (prevlist = list)\n//{\n //   return [null,msg];\n//}\n\ncontext.set ('list',list);\nvar newmsg = {};\nvar a = [] \n\nfor (var key in list){\n    var b = {[list[key].name] : key};\n    a.push(b);\n    }\n// c = {\"manual\" : 10}\n//a.push(c);\n\nflow.set('presets', list);\n//global.set('locSettings', list);\nnewmsg.options = a;\ncontext.set ('a',a);\nmsg.payload = list;\nreturn [newmsg,null];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "a8970066be4b9eda",
+                "644e2ffcf4e53e2a",
+                "12ebba6d3a78cf4b",
+                "16c0d36af83593d4"
+            ],
+            [
+                "7519d37f263e8da4"
+            ]
+        ]
+    },
+    {
+        "id": "f6d0151181edec41",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "stats frame 1",
+        "func": "//check location\n\nvar name = msg.name;\nmsg.name = name;\n\n//reset\nif (msg.topic == \"reset\")\n{\n    \n}\n\n//variables\nvar fullAmount =  0;\nvar halfAmount =  0;\nvar emptyAmount =  0;\nvar a = flow.get('locations.' + name + '.stats') || [];\nvar averageScore = 0;\n\n\n\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\"];\nm.data = [[a.fullAmount, a.halfAmount, a.emptyAmount]];\nm.series = [\"classes\"];\nmsg.averageScore =  Number(a.averageScore).toFixed(2);\nmsg.averageScore = msg.averageScore *100 ;\nnode.status({ fill: \"red\", shape: \"ring\", text: name + \" \" + a.totalAmount + \" \" + msg.averageScore });\n\n//flow.set('locations.' + name + '.stats', a);\n//context.set ('a', a);\nmsg.payload = [m];\nmsg.topic = a.totalAmount;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "872352212b1cb6a7"
+            ]
+        ]
+    },
+    {
+        "id": "872352212b1cb6a7",
+        "type": "ui_chart",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "117855cb9e91df90",
+        "order": 4,
+        "width": "7",
+        "height": "4",
+        "label": "last {{msg.topic}} classes average score: {{msg.averageScore}}%",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "363027fd3462aebd",
+        "type": "inject",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [
+                "7519d37f263e8da4"
+            ]
+        ]
+    },
+    {
+        "id": "42cc3e47b81811d5",
+        "type": "inject",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "5095c95b7e5fb9d8"
+            ]
+        ]
+    },
+    {
+        "id": "296326566ac9ca86",
+        "type": "catch",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "scope": [
+            "8b9e94523c7284db"
+        ],
+        "uncaught": false,
+        "x": 690,
+        "y": 100,
+        "wires": [
+            [
+                "9f8eaec6b2298991"
+            ]
+        ]
+    },
+    {
+        "id": "9f8eaec6b2298991",
+        "type": "debug",
+        "z": "7657c2001fc91fb1",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "91828249ab86e361",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "6fecc6b99f353e47",
+        "name": "frame 1 last",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1170,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62b5c7c547daa27e",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastimage.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 580,
+        "wires": [
+            [
+                "91828249ab86e361"
+            ]
+        ]
+    },
+    {
+        "id": "83e146e9cbd4648d",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "load frame 2",
+        "func": "var name = flow.get('frame2');\nmsg.name = name;\nvar location = flow.get('locations.' + name);\n//Object.assign({}, );\n\n\nmsg.lastDate = location.lastimage.year + '-' +\nlocation.lastimage.month + '-' +\nlocation.lastimage.day + ' ' +\nlocation.lastimage.hour + ':' +\nlocation.lastimage.min;\n\nvar percentScore = Number(location.lastimage.score).toFixed(2);\n//percentScore = Number(percentScore);\npercentScore = Number(percentScore) *100;\n//location.lastimage.score = percentScore;\n\n\n\nnode.status({fill:\"red\",shape:\"ring\",text:percentScore + \" \" + percentScoreFull});\n\nmsg.percentScore = percentScore;\n\nmsg.payload = location;\n\nif (!location.lastfull)\n {\n   msg.lastFullDate = \"N/A\"\n    return msg;\n}\n\nmsg.lastFullDate = location.lastfull.year + '-' +\nlocation.lastfull.month + '-' +\nlocation.lastfull.day + ' ' +\nlocation.lastfull.hour + ':' +\nlocation.lastfull.min;\n\nvar percentScoreFull = 0 + location.lastfull.score;\npercentScoreFull = Number(percentScoreFull).toFixed(2);\npercentScoreFull = percentScoreFull * 100;\n//location.lastfull.score = percentScoreFull;\nmsg.percentScoreFull =percentScoreFull;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 560,
+        "wires": [
+            [
+                "62b5c7c547daa27e",
+                "bc417b55e7f0cb27",
+                "b6a1b6660811d46f",
+                "998113c40013b558",
+                "7daf348fc3bc76fa"
+            ]
+        ]
+    },
+    {
+        "id": "8442313bd98789e0",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "6fecc6b99f353e47",
+        "name": "frame 1 lastfull",
+        "order": 8,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc417b55e7f0cb27",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastfull.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 700,
+        "wires": [
+            [
+                "8442313bd98789e0"
+            ]
+        ]
+    },
+    {
+        "id": "b6a1b6660811d46f",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "6fecc6b99f353e47",
+        "order": 6,
+        "width": "7",
+        "height": "1",
+        "name": "lastfull",
+        "label": "Last Full: {{msg.lastFullDate}}",
+        "format": "{{msg.percentScoreFull}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 970,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "998113c40013b558",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "6fecc6b99f353e47",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Location",
+        "label": "{{msg.payload.name}} {{msg.payload.lastimage.date}}",
+        "format": "{{msg.payload.lastimage.class}} {{msg.percentScore}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 980,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7daf348fc3bc76fa",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "stats frame 1",
+        "func": "//check location\n\nvar name = msg.name;\nmsg.name = name;\n\n//reset\nif (msg.topic == \"reset\")\n{\n    \n}\n\n//variables\nvar fullAmount =  0;\nvar halfAmount =  0;\nvar emptyAmount =  0;\nvar a = flow.get('locations.' + name + '.stats') || [];\nvar averageScore = 0;\n\n\n\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\"];\nm.data = [[a.fullAmount, a.halfAmount, a.emptyAmount]];\nm.series = [\"classes\"];\nmsg.averageScore =  Number(a.averageScore).toFixed(2);\nmsg.averageScore = msg.averageScore *100 ;\nnode.status({ fill: \"red\", shape: \"ring\", text: name + \" \" + a.totalAmount + \" \" + msg.averageScore });\n\n//flow.set('locations.' + name + '.stats', a);\n//context.set ('a', a);\nmsg.payload = [m];\nmsg.topic = a.totalAmount;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 620,
+        "wires": [
+            [
+                "eb2931e21c5cc2c0"
+            ]
+        ]
+    },
+    {
+        "id": "eb2931e21c5cc2c0",
+        "type": "ui_chart",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "6fecc6b99f353e47",
+        "order": 4,
+        "width": "7",
+        "height": "4",
+        "label": "last {{msg.topic}} classes average score: {{msg.averageScore}}%",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82bac7c2a4f76cde",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "82cbfaf79280e116",
+        "name": "frame 1 last",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1170,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0a74fcf3c22d8f8",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastimage.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 800,
+        "wires": [
+            [
+                "82bac7c2a4f76cde"
+            ]
+        ]
+    },
+    {
+        "id": "bfb525d0acede588",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "load frame 3",
+        "func": "var name = flow.get('frame3');\nmsg.name = name;\nvar location = flow.get('locations.' + name);\n//Object.assign({}, );\n\n\nmsg.lastDate = location.lastimage.year + '-' +\nlocation.lastimage.month + '-' +\nlocation.lastimage.day + ' ' +\nlocation.lastimage.hour + ':' +\nlocation.lastimage.min;\n\nvar percentScore = Number(location.lastimage.score).toFixed(2);\n//percentScore = Number(percentScore);\npercentScore = Number(percentScore) *100;\n//location.lastimage.score = percentScore;\n\n\n\nnode.status({fill:\"red\",shape:\"ring\",text:percentScore + \" \" + percentScoreFull});\n\nmsg.percentScore = percentScore;\n\nmsg.payload = location;\n\nif (!location.lastfull)\n {\n   msg.lastFullDate = \"N/A\"\n    return msg;\n}\n\nmsg.lastFullDate = location.lastfull.year + '-' +\nlocation.lastfull.month + '-' +\nlocation.lastfull.day + ' ' +\nlocation.lastfull.hour + ':' +\nlocation.lastfull.min;\n\nvar percentScoreFull = 0 + location.lastfull.score;\npercentScoreFull = Number(percentScoreFull).toFixed(2);\npercentScoreFull = percentScoreFull * 100;\n//location.lastfull.score = percentScoreFull;\nmsg.percentScoreFull =percentScoreFull;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 780,
+        "wires": [
+            [
+                "a0a74fcf3c22d8f8",
+                "24c2a8ff5edf115d",
+                "cd9931f97a17973c",
+                "d6d31ff09ce8a6b1",
+                "a4338f48d4965c50"
+            ]
+        ]
+    },
+    {
+        "id": "8b600812bdbcde9a",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "82cbfaf79280e116",
+        "name": "frame 1 lastfull",
+        "order": 8,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24c2a8ff5edf115d",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastfull.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 920,
+        "wires": [
+            [
+                "8b600812bdbcde9a"
+            ]
+        ]
+    },
+    {
+        "id": "cd9931f97a17973c",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "82cbfaf79280e116",
+        "order": 6,
+        "width": "7",
+        "height": "1",
+        "name": "lastfull",
+        "label": "Last Full: {{msg.lastFullDate}}",
+        "format": "{{msg.percentScoreFull}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 970,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "d6d31ff09ce8a6b1",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "82cbfaf79280e116",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Location",
+        "label": "{{msg.payload.name}} {{msg.payload.lastimage.date}}",
+        "format": "{{msg.payload.lastimage.class}} {{msg.percentScore}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 980,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a4338f48d4965c50",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "stats frame 1",
+        "func": "//check location\n\nvar name = msg.name;\nmsg.name = name;\n\n//reset\nif (msg.topic == \"reset\")\n{\n    \n}\n\n//variables\nvar fullAmount =  0;\nvar halfAmount =  0;\nvar emptyAmount =  0;\nvar a = flow.get('locations.' + name + '.stats') || [];\nvar averageScore = 0;\n\n\n\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\"];\nm.data = [[a.fullAmount, a.halfAmount, a.emptyAmount]];\nm.series = [\"classes\"];\nmsg.averageScore =  Number(a.averageScore).toFixed(2);\nmsg.averageScore = msg.averageScore *100 ;\nnode.status({ fill: \"red\", shape: \"ring\", text: name + \" \" + a.totalAmount + \" \" + msg.averageScore });\n\n//flow.set('locations.' + name + '.stats', a);\n//context.set ('a', a);\nmsg.payload = [m];\nmsg.topic = a.totalAmount;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 840,
+        "wires": [
+            [
+                "b5c974ade3dd48ec"
+            ]
+        ]
+    },
+    {
+        "id": "b5c974ade3dd48ec",
+        "type": "ui_chart",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "82cbfaf79280e116",
+        "order": 4,
+        "width": "7",
+        "height": "4",
+        "label": "last {{msg.topic}} classes average score: {{msg.averageScore}}%",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a742ca311f10ca73",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "9d1211ba289a4227",
+        "name": "frame 1 last",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1170,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b86392cdd50608c",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastimage.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 1020,
+        "wires": [
+            [
+                "a742ca311f10ca73"
+            ]
+        ]
+    },
+    {
+        "id": "e80e79954f0b8ebb",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "load frame 4",
+        "func": "var name = flow.get('frame4');\nmsg.name = name;\nvar location = flow.get('locations.' + name);\n//Object.assign({}, );\n\n\nmsg.lastDate = location.lastimage.year + '-' +\nlocation.lastimage.month + '-' +\nlocation.lastimage.day + ' ' +\nlocation.lastimage.hour + ':' +\nlocation.lastimage.min;\n\nvar percentScore = Number(location.lastimage.score).toFixed(2);\n//percentScore = Number(percentScore);\npercentScore = Number(percentScore) *100;\n//location.lastimage.score = percentScore;\n\n\n\nnode.status({fill:\"red\",shape:\"ring\",text:percentScore + \" \" + percentScoreFull});\n\nmsg.percentScore = percentScore;\n\nmsg.payload = location;\n\nif (!location.lastfull)\n {\n   msg.lastFullDate = \"N/A\"\n    return msg;\n}\n\nmsg.lastFullDate = location.lastfull.year + '-' +\nlocation.lastfull.month + '-' +\nlocation.lastfull.day + ' ' +\nlocation.lastfull.hour + ':' +\nlocation.lastfull.min;\n\nvar percentScoreFull = 0 + location.lastfull.score;\npercentScoreFull = Number(percentScoreFull).toFixed(2);\npercentScoreFull = percentScoreFull * 100;\n//location.lastfull.score = percentScoreFull;\nmsg.percentScoreFull =percentScoreFull;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 1000,
+        "wires": [
+            [
+                "7b86392cdd50608c",
+                "370c609a0c7f4c51",
+                "da03343a26f34c3a",
+                "e541945170ed7a62",
+                "6a5e8fa3a446ed23"
+            ]
+        ]
+    },
+    {
+        "id": "646f5142c91dd1b0",
+        "type": "ui_template",
+        "z": "7657c2001fc91fb1",
+        "group": "9d1211ba289a4227",
+        "name": "frame 1 lastfull",
+        "order": 8,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1160,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "370c609a0c7f4c51",
+        "type": "template",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img width=\"300px\" height=\"300px\" src=\"{{{payload.lastfull.image}}}\">",
+        "output": "str",
+        "x": 980,
+        "y": 1140,
+        "wires": [
+            [
+                "646f5142c91dd1b0"
+            ]
+        ]
+    },
+    {
+        "id": "da03343a26f34c3a",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "9d1211ba289a4227",
+        "order": 6,
+        "width": "7",
+        "height": "1",
+        "name": "lastfull",
+        "label": "Last Full: {{msg.lastFullDate}}",
+        "format": "{{msg.percentScoreFull}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 970,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e541945170ed7a62",
+        "type": "ui_text",
+        "z": "7657c2001fc91fb1",
+        "group": "9d1211ba289a4227",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "Location",
+        "label": "{{msg.payload.name}} {{msg.payload.lastimage.date}}",
+        "format": "{{msg.payload.lastimage.class}} {{msg.percentScore}}%",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 980,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "6a5e8fa3a446ed23",
+        "type": "function",
+        "z": "7657c2001fc91fb1",
+        "name": "stats frame 1",
+        "func": "//check location\n\nvar name = msg.name;\nmsg.name = name;\n\n//reset\nif (msg.topic == \"reset\")\n{\n    \n}\n\n//variables\nvar fullAmount =  0;\nvar halfAmount =  0;\nvar emptyAmount =  0;\nvar a = flow.get('locations.' + name + '.stats') || [];\nvar averageScore = 0;\n\n\n\n\n\nvar m = {};\nm.labels = [\"full\", \"half\", \"Empty\"];\nm.data = [[a.fullAmount, a.halfAmount, a.emptyAmount]];\nm.series = [\"classes\"];\nmsg.averageScore =  Number(a.averageScore).toFixed(2);\nmsg.averageScore = msg.averageScore *100 ;\nnode.status({ fill: \"red\", shape: \"ring\", text: name + \" \" + a.totalAmount + \" \" + msg.averageScore });\n\n//flow.set('locations.' + name + '.stats', a);\n//context.set ('a', a);\nmsg.payload = [m];\nmsg.topic = a.totalAmount;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1060,
+        "wires": [
+            [
+                "3e2568fa7182b195"
+            ]
+        ]
+    },
+    {
+        "id": "3e2568fa7182b195",
+        "type": "ui_chart",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "group": "9d1211ba289a4227",
+        "order": 4,
+        "width": "7",
+        "height": "4",
+        "label": "last {{msg.topic}} classes average score: {{msg.averageScore}}%",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2930e2",
+            "#c5ceff",
+            "#706f6f",
+            "#e72482",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54c548d1ba295069",
+        "type": "inject",
+        "z": "7657c2001fc91fb1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "8f20060bf31fc26c"
+            ]
+        ]
+    },
+    {
+        "id": "38772e81043ce7e9",
+        "type": "debug",
+        "z": "2e3cb4493e820818",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "307e3669425765d4",
+        "type": "good-object-detection",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "returnValue": 0,
+        "model": "yolov8m",
+        "threshold": "0.2",
+        "absolutePathDir": "",
+        "x": 620,
+        "y": 140,
+        "wires": [
+            [
+                "38772e81043ce7e9",
+                "6f99b9595273a355",
+                "dbdc61a91d920d2c"
+            ]
+        ]
+    },
+    {
+        "id": "87f24e31ebc4d5b3",
+        "type": "jimp-image",
+        "z": "2e3cb4493e820818",
+        "name": "buffer",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "FONT_SANS_128_WHITE",
+        "parameter1Type": "jimpFont",
+        "parameter2": "0",
+        "parameter2Type": "num",
+        "parameter3": "0",
+        "parameter3Type": "num",
+        "parameter4": "payload[0].class",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "none",
+        "parameter6": "",
+        "parameter6Type": "none",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "ca89e256c2a8141f",
+                "307e3669425765d4"
+            ]
+        ]
+    },
+    {
+        "id": "00af079f3f0a192c",
+        "type": "fileinject",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "87f24e31ebc4d5b3"
+            ]
+        ]
+    },
+    {
+        "id": "ca89e256c2a8141f",
+        "type": "image viewer",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f99b9595273a355",
+        "type": "jimp-image",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "data": "payload.originImg",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "payload.data.bottle[0].x",
+        "parameter1Type": "msg",
+        "parameter2": "payload.data.bottle[0].y",
+        "parameter2Type": "msg",
+        "parameter3": "payload.data.bottle[0].w",
+        "parameter3Type": "msg",
+        "parameter4": "payload.data.bottle[0].h",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 910,
+        "y": 280,
+        "wires": [
+            [
+                "668d455326ca3f7e"
+            ]
+        ]
+    },
+    {
+        "id": "668d455326ca3f7e",
+        "type": "image viewer",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 1110,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbdc61a91d920d2c",
+        "type": "jimp-image",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "data": "payload.originImg",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "payload.data.carrot[0].x",
+        "parameter1Type": "msg",
+        "parameter2": "payload.data.carrot[0].y",
+        "parameter2Type": "msg",
+        "parameter3": "payload.data.carrot[0].w",
+        "parameter3Type": "msg",
+        "parameter4": "payload.data.carrot[0].h",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "98f274a6b29fe4c5"
+            ]
+        ]
+    },
+    {
+        "id": "98f274a6b29fe4c5",
+        "type": "image viewer",
+        "z": "2e3cb4493e820818",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 910,
+        "y": 320,
         "wires": [
             []
         ]
